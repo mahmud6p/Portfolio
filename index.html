@@ -205,6 +205,118 @@ nav .bar{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(
 .gx{min-height:48px;margin:18px 0 14px;font-size:14px;color:#c7c8cc;max-width:560px}
 @media(prefers-reduced-motion:reduce){.chips button{transition:none}}
 
+/* ---- cybersecurity toolkit ---- */
+.tk-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.tk-kicker{font:600 11px/1.4 var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.tk-priv{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:var(--panel);padding:14px 16px;max-width:300px}
+.tk-priv .dot{width:8px;height:8px;border-radius:50%;background:#3ddc6b;margin-top:7px;box-shadow:0 0 0 4px rgba(61,220,107,.12);flex:none}
+.tk-priv b{display:block;font-size:12px;font-weight:600}
+.tk-priv small{display:block;color:var(--mute);font-size:11.5px;line-height:1.5}
+.tk-shell{display:grid;grid-template-columns:238px minmax(0,1fr);border:1px solid var(--line);background:var(--panel);margin-top:34px;min-height:560px}
+.tk-nav{display:flex;flex-direction:column;padding:12px;gap:3px;border-right:1px solid var(--line);background:rgba(0,0,0,.13)}
+.tk-tab{appearance:none;display:flex;align-items:center;gap:11px;width:100%;padding:10px 11px;border:1px solid transparent;background:none;color:var(--mute);font:600 12.5px/1.3 var(--font);text-align:left;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.tk-tab svg{flex:none;width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tk-tab:hover{color:var(--text);background:rgba(255,255,255,.03)}
+.tk-tab[aria-selected=true]{color:var(--text);background:var(--bg);border-color:var(--line);box-shadow:inset 2px 0 0 var(--accent)}
+.tk-tab[aria-selected=true] svg{color:var(--accent)}
+.tk-tab:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.tk-panes{min-width:0;padding:28px clamp(18px,3.2vw,38px) 36px;background:var(--bg)}
+.tk [hidden]{display:none !important}
+.tk-pane{animation:tkin .28s ease both}
+@keyframes tkin{from{opacity:0;transform:translateY(5px)}}
+.tk-pane-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+.tk-pane-head h3{font-weight:300;font-size:clamp(21px,2.8vw,28px);letter-spacing:-.01em;margin:0 0 6px}
+.tk-pane-head p{margin:0;max-width:640px;color:var(--mute);font-size:13px;line-height:1.6}
+.tk-badge{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(60,200,255,.35);color:var(--accent);font:600 9.5px/1 var(--font);letter-spacing:.12em;padding:7px 9px;white-space:nowrap}
+.tk-grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start}
+.tk-field{margin-bottom:16px;min-width:0}
+.tk-field>label,.tk-label-row label{display:block;font:600 10.5px/1.4 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:7px}
+.tk-field input[type=text],.tk-field textarea,.tk-field select{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--text);font:13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:11px 13px;outline:none;transition:border-color .18s,box-shadow .18s}
+.tk-field input[type=text]:focus,.tk-field textarea:focus,.tk-field select:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.tk-field textarea{min-height:110px;resize:vertical}
+.tk-field select{cursor:pointer}
+.tk-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 0}
+.tk-btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:9px 15px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:600 11.5px var(--font);letter-spacing:.02em;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.tk-btn:hover{border-color:var(--text)}
+.tk-btn.primary{background:var(--accent);border-color:var(--accent);color:#16171a}
+.tk-btn.primary:hover{background:#86dcff;border-color:#86dcff}
+.tk-btn[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.tk-btn.primary[aria-pressed=true]{color:#16171a}
+.tk-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tk-status{margin:12px 0 0;min-height:18px;font-size:11.5px;color:var(--mute);display:flex;align-items:center;gap:8px;line-height:1.5}
+.tk-status.err{color:#ff8b8f}
+.tk-status .sp{width:12px;height:12px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:tks .7s linear infinite;flex:none}
+@keyframes tks{to{transform:rotate(360deg)}}
+.tk-hint{color:var(--mute);font-size:11.5px;line-height:1.55;margin:12px 0 0}
+.tk-pane output{display:block;font-size:13.5px;line-height:1.5;color:#c7c8cc}
+.tk-out #ho{padding:14px}
+.tk-empty{border:1px dashed var(--line);padding:20px;color:var(--mute);font-size:12.5px;margin:0}
+.tk-out{background:var(--panel);border:1px solid var(--line);margin-top:14px;min-width:0}
+.tk-out-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 11px;border-bottom:1px solid var(--line);font:600 9.5px/1.3 var(--font);letter-spacing:.11em;text-transform:uppercase;color:var(--mute)}
+.tk-out pre{margin:0;padding:13px 14px;min-height:64px;max-height:360px;overflow:auto;font:12.5px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere}
+.tk-copy{appearance:none;background:none;border:1px solid var(--line);color:var(--mute);font:600 9.5px/1 var(--font);letter-spacing:.08em;padding:6px 8px;cursor:pointer;transition:color .18s,border-color .18s}
+.tk-copy:hover{color:var(--text);border-color:var(--text)}
+.tk-copy.done{color:#3ddc6b;border-color:#3ddc6b}
+.tk-copy.bad{color:#ff8b8f;border-color:#ff8b8f}
+.tk-secret{background:var(--panel);border:1px solid var(--line);padding:16px;min-height:58px;font:600 17px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-wrap:anywhere;color:var(--text);letter-spacing:.03em}
+.tk-meta{font-size:11.5px;line-height:1.55;color:var(--mute);margin:10px 0 0}
+.tk-aside{border:1px solid var(--line);background:var(--panel);padding:18px}
+.tk-aside h4{font-size:12px;margin:0 0 10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.tk-aside ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.tk-aside li{font-size:12px;color:#c7c8cc;padding-left:14px;position:relative;line-height:1.5}
+.tk-aside li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;background:var(--accent)}
+.tk-checks{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.tk-check{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--panel);padding:9px 10px;font-size:11.5px;cursor:pointer;user-select:none}
+.tk-check span{margin-left:auto;color:var(--mute);font-size:10px;font-family:ui-monospace,Menlo,Consolas,monospace}
+.tk-check input{accent-color:var(--accent);width:14px;height:14px;margin:0}
+.tk-check:has(input:checked){border-color:rgba(60,200,255,.5)}
+.tk-range{display:flex;align-items:center;gap:14px;border:1px solid var(--line);background:var(--panel);padding:10px 13px}
+.tk-range input[type=range]{flex:1;min-width:0;accent-color:var(--accent)}
+.tk-range output{min-width:3ch;text-align:right;font:600 13px ui-monospace,Menlo,Consolas,monospace;color:var(--accent)}
+.tk-jwt{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tk-jwt .tk-out{margin-top:0}
+.tk-jwt pre{max-height:280px}
+.tk-notice{border:1px solid rgba(255,159,67,.35);background:rgba(255,159,67,.07);padding:12px 14px;font-size:12px;line-height:1.55;color:#e8c9a8;margin:14px 0}
+.tk-notice b{color:#ff9f43}
+.tk-claims{display:grid;padding:2px 0}
+.tk-claims div{display:flex;justify-content:space-between;gap:18px;padding:9px 14px;border-bottom:1px solid var(--line);font-size:11.5px}
+.tk-claims div:last-child{border-bottom:0}
+.tk-claims span{color:var(--mute)}
+.tk-claims b{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.tk-warn{margin:0;padding:11px 14px;border-bottom:1px solid var(--line);background:rgba(229,72,77,.08);color:#ffb3b6;font-size:11.5px;line-height:1.55}
+.tk-url{background:var(--panel);border:1px solid var(--line);padding:13px 14px;font:12.5px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-wrap:anywhere;color:var(--mute);margin:0 0 6px}
+.tk-url b{color:var(--accent);background:rgba(60,200,255,.13);font-weight:600}
+.tk-url i{font-style:normal;color:#71737c}
+.tk-note{font-size:11px;color:var(--mute);margin:0 0 16px}
+.tk-result{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--line);background:var(--panel);padding:14px 16px;margin-top:14px}
+.tk-risk{font-size:15px;font-weight:600;line-height:1.35}
+.tk-risk small{display:block;color:var(--mute);font-size:10.5px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.tk-risk.hi{color:#ff8b8f}.tk-risk.md{color:#ff9f43}.tk-risk.lo{color:#ffd166}.tk-risk.none{color:var(--accent)}
+.tk-score{font:300 30px/1 var(--font);color:var(--text);white-space:nowrap}
+.tk-score span{font-size:11px;color:var(--mute);font-weight:400}
+.tk-find{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.tk-find li{border:1px solid var(--line);border-left:3px solid var(--line);padding:11px 13px;background:var(--panel)}
+.tk-find li.high{border-left-color:#e5484d}.tk-find li.medium{border-left-color:#ff9f43}.tk-find li.low{border-left-color:#ffd166}.tk-find li.info{border-left-color:var(--accent)}
+.tk-find b{display:block;font-size:12.5px;font-weight:600;padding-right:56px}
+.tk-find p{margin:4px 0 0;color:var(--mute);font-size:11.5px;line-height:1.6}
+.tk-find .sev{float:right;font:600 8.5px/1 var(--font);letter-spacing:.1em;padding:4px 5px;border:1px solid var(--line);color:var(--mute);text-transform:uppercase}
+.tk-samples{display:flex;gap:7px;flex-wrap:wrap;margin:-4px 0 16px}
+.tk-samples button{background:none;border:1px solid var(--line);color:var(--mute);padding:6px 10px;font:11px ui-monospace,Menlo,Consolas,monospace;cursor:pointer}
+.tk-samples button:hover{color:var(--text);border-color:var(--text)}
+.tk .term{margin-top:0}
+.tk .tout{height:340px}
+@media(max-width:900px){
+ .tk-grid2,.tk-jwt{grid-template-columns:1fr}
+ .tk-shell{grid-template-columns:1fr;min-height:0}
+ .tk-nav{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px;scrollbar-width:none}
+ .tk-nav::-webkit-scrollbar{display:none}
+ .tk-tab{flex:0 0 auto;padding:9px 12px;width:auto;box-shadow:none}
+ .tk-tab[aria-selected=true]{box-shadow:inset 0 -2px 0 var(--accent)}
+ .tk-panes{padding:24px 18px 30px}
+ .tk-checks{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.tk-pane,.tk-status .sp{animation:none}}
+
 /* ---- link checker chips ---- */
 .sh{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}.sh button{background:none;border:1px solid var(--line);color:var(--mute);padding:6px 12px;font:12px ui-monospace,Menlo,Consolas,monospace;cursor:pointer}.sh button:hover{color:var(--text);border-color:var(--text)}
 /* ---- link checker ---- */
@@ -282,7 +394,7 @@ footer{padding:20px 0 56px}
 <body>
 <nav id="nv"><i class="bar"></i><div class="wrap">
  <a class="logo" href="#top"><img src="data:image/png;base64,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" alt="MPM logo"><span>MPM</span></a>
- <div class="links"><a href="#about">About</a><a href="#platform">Services</a><a href="#solutions">Focus Areas</a><a href="#lab">Lab</a><a href="#terminal">Terminal</a><a href="#skills">Skills</a><a href="#check">Health Check</a><a href="#contact">Contact</a></div>
+ <div class="links"><a href="#about">About</a><a href="#platform">Services</a><a href="#solutions">Focus Areas</a><a href="#toolkit">Toolkit</a><a href="#toolkit" data-tool="terminal">Terminal</a><a href="#skills">Skills</a><a href="#check">Health Check</a><a href="#contact">Contact</a></div>
 </div></nav>
 
 <main id="top">
@@ -318,40 +430,144 @@ footer{padding:20px 0 56px}
  </div>
 </section>
 
-<section class="wrap sec lab" id="lab">
- <h2 class="rv">Try It<br>Yourself</h2>
- <div class="duo">
-  <div><h3>How long would a password last?</h3><p>Type a made-up password. The estimate runs in your browser and nothing is stored.</p>
-   <input type="text" id="pw" autocomplete="off" spellcheck="false" placeholder="Try: Tr0ub4dor&amp;3" aria-label="Test password">
-   <div class="meter" id="pb"><i></i></div><output id="pr" aria-live="polite">Type something to see the estimate.</output>
-   <small>Assumes random characters and an offline attack. Passwords made of real words fall faster.</small></div>
-  <div><h3>What a hash does to one letter</h3><p>SHA-256 turns any text into a fixed fingerprint. Edit one character and watch the highlighted digits change.</p>
-   <input type="text" id="hi" value="MPM" placeholder="Type anything here" autocomplete="off" spellcheck="false" aria-label="Text to hash">
-   <output id="ho" aria-live="off"></output>
-   <small>Type, or delete a letter, in the box above. The first line is the previous fingerprint, the second is the new one, and yellow digits are the ones that changed.</small></div>
+<span id="lab" aria-hidden="true"></span>
+<section class="wrap sec tk" id="toolkit">
+ <div class="tk-head">
+  <div>
+   <p class="tk-kicker">Interactive lab</p>
+   <h2 class="rv">Cybersecurity<br>Toolkit</h2>
+  </div>
+  <div class="tk-priv"><span class="dot" aria-hidden="true"></span><div><b>100% local</b><small>Every tool runs in this browser tab. Nothing you paste is uploaded, logged or sent to a server.</small></div></div>
  </div>
-</section>
 
+ <div class="tk-shell">
+  <div class="tk-nav" role="tablist" aria-label="Security tools" aria-orientation="vertical">
+   <button class="tk-tab" id="tab-password" role="tab" aria-selected="true" aria-controls="pane-password" data-tool="password" tabindex="0"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Password strength</span></button>
+   <button class="tk-tab" id="tab-generator" role="tab" aria-selected="false" aria-controls="pane-generator" data-tool="generator" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8m-3 0h3v3"/></svg><span>Password generator</span></button>
+   <button class="tk-tab" id="tab-hash" role="tab" aria-selected="false" aria-controls="pane-hash" data-tool="hash" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 7 21M17 3l-2 18M4 9h16M3 15h16"/></svg><span>Hash lab</span></button>
+   <button class="tk-tab" id="tab-hashgen" role="tab" aria-selected="false" aria-controls="pane-hashgen" data-tool="hashgen" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 7 21M17 3l-2 18M4 9h16M3 15h16"/><path d="M18 14v6m-3-3h6"/></svg><span>Hash generator</span></button>
+   <button class="tk-tab" id="tab-base64" role="tab" aria-selected="false" aria-controls="pane-base64" data-tool="base64" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-4 5 4 5M16 7l4 5-4 5"/></svg><span>Base64</span></button>
+   <button class="tk-tab" id="tab-jwt" role="tab" aria-selected="false" aria-controls="pane-jwt" data-tool="jwt" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg><span>JWT decoder</span></button>
+   <button class="tk-tab" id="tab-url" role="tab" aria-selected="false" aria-controls="pane-url" data-tool="url" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg><span>URL analyzer</span></button>
+   <button class="tk-tab" id="tab-terminal" role="tab" aria-selected="false" aria-controls="pane-terminal" data-tool="terminal" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg><span>Terminal</span></button>
+  </div>
 
-<section class="wrap sec" id="terminal" style="padding-top:20px">
- <h2 class="rv">Ask My<br>Terminal</h2>
- <div class="term">
-  <div class="rh"><b>mpm@portfolio:~</b><span>type help</span></div>
-  <div class="tout" id="tout" aria-live="polite" role="log"></div>
-  <form class="tin" id="tf" autocomplete="off"><label for="ti">$</label><input id="ti" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="Terminal command"></form>
-  <div class="chips" id="chips"></div>
- </div>
-</section>
+  <div class="tk-panes">
+   <div class="tk-pane" id="pane-password" role="tabpanel" aria-labelledby="tab-password">
+    <div class="tk-pane-head"><div><h3>Password strength</h3><p>Estimate how long a password would survive an offline guessing attack. The estimate runs here and nothing is stored.</p></div><span class="tk-badge">LOCAL ONLY</span></div>
+    <div class="tk-grid2">
+     <div>
+      <div class="tk-field"><label for="pw">Test password</label><input type="text" id="pw" autocomplete="off" spellcheck="false" placeholder="Try: Tr0ub4dor&amp;3" aria-label="Test password"></div>
+      <div class="meter" id="pb"><i></i></div>
+      <output id="pr" aria-live="polite">Type something to see the estimate.</output>
+      <p class="tk-hint">Assumes randomly generated characters and 10 billion guesses per second. Passwords built from real words, dates or keyboard patterns fall much faster.</p>
+     </div>
+     <aside class="tk-aside">
+      <h4>Reading the result</h4>
+      <ul><li>Bits measure how many guesses an attacker needs, not how “complex” a password looks.</li><li>Length matters more than swapping letters for symbols.</li><li>A password manager makes long, unique passwords practical.</li><li>This is an estimate. It cannot know whether a password has appeared in a breach.</li></ul>
+     </aside>
+    </div>
+   </div>
 
+   <div class="tk-pane" id="pane-generator" role="tabpanel" aria-labelledby="tab-generator" hidden>
+    <div class="tk-pane-head"><div><h3>Secure password generator</h3><p>Build a random password with the browser’s cryptographically secure random number generator.</p></div><span class="tk-badge">CRYPTO RANDOM</span></div>
+    <div class="tk-grid2">
+     <div>
+      <div class="tk-field"><div class="tk-label-row"><label for="pg-len">Length</label></div><div class="tk-range"><input type="range" id="pg-len" min="8" max="128" value="20" aria-label="Password length"><output id="pg-lenout" for="pg-len">20</output></div></div>
+      <div class="tk-checks" aria-label="Character types">
+       <label class="tk-check"><input type="checkbox" id="pg-upper" checked> Uppercase <span>A–Z</span></label>
+       <label class="tk-check"><input type="checkbox" id="pg-lower" checked> Lowercase <span>a–z</span></label>
+       <label class="tk-check"><input type="checkbox" id="pg-digits" checked> Numbers <span>0–9</span></label>
+       <label class="tk-check"><input type="checkbox" id="pg-symbols" checked> Symbols <span>!@#$</span></label>
+       <label class="tk-check" style="grid-column:1/-1"><input type="checkbox" id="pg-avoid"> Avoid look-alike characters <span>O 0 I l 1</span></label>
+      </div>
+      <div class="tk-actions" style="margin-top:16px"><button class="tk-btn primary" type="button" id="pg-run">Generate password</button><button class="tk-btn" type="button" id="pg-copy" data-copy="pg-out">Copy</button></div>
+      <div class="tk-status" id="pg-status" aria-live="polite"></div>
+     </div>
+     <div>
+      <div class="tk-field"><label>Generated password</label><div class="tk-secret" id="pg-out" aria-live="off"></div></div>
+      <div class="tk-meta" id="pg-meta"></div>
+      <p class="tk-hint">Every selected character type is guaranteed at least once. The final string is shuffled with secure random values, so position does not leak the pattern.</p>
+     </div>
+    </div>
+   </div>
 
-<section class="wrap sec lab" id="phish" style="padding-top:20px">
- <h2 class="rv">Check<br>Any Link</h2>
- <div class="game">
-  <div class="gh"><b>Is this link suspicious?</b><span>runs in your browser</span></div>
-  <div class="gb">
-   <input type="text" id="lu" placeholder="Paste a link, e.g. https://example.com/login" autocomplete="off" spellcheck="false" aria-label="Link to check">
-   <div class="sh"><span style="font-size:12px;color:var(--mute);align-self:center">Try:</span><button type="button" data-f="https://github.com.security-check.net/login">fake GitHub</button><button type="button" data-f="https://paypa1-secure-login.com/verify">look-alike PayPal</button><button type="button" data-f="http://192.168.4.7/bkash/login">IP address</button><button type="button" data-f="https://accounts.google.com/signin">real Google</button></div>
-   <div id="lo" aria-live="polite"><p class="gx">Paste a link above. It is only analysed here; the link is never opened or sent anywhere.</p></div>
+   <div class="tk-pane" id="pane-hash" role="tabpanel" aria-labelledby="tab-hash" hidden>
+    <div class="tk-pane-head"><div><h3>What a hash does to one letter</h3><p>SHA-256 turns any text into a fixed 64-character fingerprint. Edit one character and watch the highlighted digits change.</p></div><span class="tk-badge">SHA-256</span></div>
+    <div class="tk-grid2">
+     <div>
+      <div class="tk-field"><label for="hi">Text to hash</label><input type="text" id="hi" value="MPM" placeholder="Type anything here" autocomplete="off" spellcheck="false" aria-label="Text to hash"></div>
+      <p class="tk-hint">The first line is the previous fingerprint, the second is the new one, and the highlighted digits are the ones that changed. A good hash changes about half its digits for any edit.</p>
+     </div>
+     <div>
+      <div class="tk-out" style="margin-top:0"><div class="tk-out-head"><span>SHA-256 fingerprint</span><span>64 hex characters</span></div><div id="ho" aria-live="off"></div></div>
+     </div>
+    </div>
+   </div>
+
+   <div class="tk-pane" id="pane-hashgen" role="tabpanel" aria-labelledby="tab-hashgen" hidden>
+    <div class="tk-pane-head"><div><h3>Advanced hash generator</h3><p>Hash text with SHA-256, SHA-384 or SHA-512 using the Web Crypto API. Useful for checksums and integrity checks.</p></div><span class="tk-badge">WEB CRYPTO</span></div>
+    <div class="tk-grid2">
+     <div>
+      <div class="tk-field"><label for="hg-input">Text to hash</label><textarea id="hg-input" spellcheck="false" placeholder="Type or paste text…">Cybersecurity starts with curiosity.</textarea></div>
+      <div class="tk-field"><label for="hg-algo">Algorithm</label><select id="hg-algo"><option value="SHA-256">SHA-256</option><option value="SHA-384">SHA-384</option><option value="SHA-512">SHA-512</option></select></div>
+      <div class="tk-actions"><button class="tk-btn primary" type="button" id="hg-run">Generate hash</button></div>
+      <div class="tk-status" id="hg-status" aria-live="polite"></div>
+     </div>
+     <div>
+      <div class="tk-out" style="margin-top:0"><div class="tk-out-head"><span>Hex digest</span><button class="tk-copy" type="button" data-copy="hg-out">Copy</button></div><pre id="hg-out"></pre></div>
+      <div class="tk-meta" id="hg-len"></div>
+      <p class="tk-hint">Hashing is one-way. You cannot recover the input from the digest, and the same input always produces the same hash.</p>
+     </div>
+    </div>
+   </div>
+
+   <div class="tk-pane" id="pane-base64" role="tabpanel" aria-labelledby="tab-base64" hidden>
+    <div class="tk-pane-head"><div><h3>Base64 encoder / decoder</h3><p>Convert text to Base64 or recover text from Base64. Invalid input is rejected with a clear reason.</p></div><span class="tk-badge">UTF-8</span></div>
+    <div class="tk-actions" role="group" aria-label="Base64 mode" style="margin-bottom:18px">
+     <button class="tk-btn primary" type="button" id="b64-enc" aria-pressed="true">Encode text</button>
+     <button class="tk-btn" type="button" id="b64-dec" aria-pressed="false">Decode Base64</button>
+    </div>
+    <div class="tk-field"><label for="b64-in" id="b64-inlabel">Text to encode</label><textarea id="b64-in" spellcheck="false" placeholder="Type or paste text…"></textarea></div>
+    <div class="tk-actions"><button class="tk-btn primary" type="button" id="b64-run">Encode</button><button class="tk-btn" type="button" id="b64-swap">Use output as input</button><button class="tk-btn" type="button" id="b64-clear">Clear</button></div>
+    <div class="tk-status" id="b64-status" aria-live="polite"></div>
+    <div class="tk-out"><div class="tk-out-head"><span id="b64-outlabel">Base64 output</span><button class="tk-copy" type="button" data-copy="b64-out">Copy</button></div><pre id="b64-out"></pre></div>
+    <p class="tk-hint">Standard Base64 only. Whitespace is ignored and missing padding is added automatically. Decoded bytes must form valid UTF-8 text. Base64 is encoding, not encryption.</p>
+   </div>
+
+   <div class="tk-pane" id="pane-jwt" role="tabpanel" aria-labelledby="tab-jwt" hidden>
+    <div class="tk-pane-head"><div><h3>JWT decoder</h3><p>Read the header and payload of a JSON Web Token without sending it anywhere. Decoding does not verify the signature.</p></div><span class="tk-badge">NO UPLOAD</span></div>
+    <div class="tk-field"><label for="jwt-in">JWT (three parts separated by dots)</label><textarea id="jwt-in" spellcheck="false" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOi…"></textarea></div>
+    <div class="tk-actions"><button class="tk-btn primary" type="button" id="jwt-run">Decode token</button><button class="tk-btn" type="button" id="jwt-sample">Load sample</button><button class="tk-btn" type="button" id="jwt-clear">Clear</button></div>
+    <div class="tk-status" id="jwt-status" aria-live="polite"></div>
+    <div class="tk-notice"><b>Decoding is not verification.</b> This tool only reads the header and payload. It does not check the signature, so a decoded token is not proof that it is genuine or unmodified. Never paste production secrets into any online tool, including this one.</div>
+    <div class="tk-jwt" id="jwt-view" hidden>
+     <div class="tk-out"><div class="tk-out-head"><span>Header</span><button class="tk-copy" type="button" data-copy="jwt-head">Copy</button></div><pre id="jwt-head"></pre></div>
+     <div class="tk-out"><div class="tk-out-head"><span>Payload</span><button class="tk-copy" type="button" data-copy="jwt-payload">Copy</button></div><pre id="jwt-payload"></pre></div>
+    </div>
+    <div class="tk-out" id="jwt-meta-box" hidden><div class="tk-out-head"><span>Claims and timing</span><span>decoded locally</span></div><div id="jwt-warn"></div><div class="tk-claims" id="jwt-meta"></div></div>
+    <div class="tk-out" id="jwt-sig-box" hidden><div class="tk-out-head"><span>Signature segment</span><span class="tk-badge">NOT VERIFIED</span></div><pre id="jwt-sig"></pre></div>
+    <p class="tk-hint">A signature only means something when it is checked with the correct key and the algorithm named in the header. This page does not perform that check.</p>
+   </div>
+
+   <div class="tk-pane" id="pane-url" role="tabpanel" aria-labelledby="tab-url" hidden>
+    <div class="tk-pane-head"><div><h3>Phishing URL analyzer</h3><p>Inspect the structure of a link for look-alike domains, punycode, misleading subdomains and other common phishing patterns.</p></div><span class="tk-badge">HEURISTIC</span></div>
+    <div class="tk-field"><label for="lu">URL to inspect</label><input type="text" id="lu" placeholder="Paste a link, e.g. https://example.com/login" autocomplete="off" spellcheck="false" aria-label="URL to inspect"></div>
+    <div class="tk-samples" id="url-samples"><span style="font-size:11px;color:var(--mute);align-self:center">Try:</span><button type="button" data-url="https://github.com.security-check.net/login">fake GitHub</button><button type="button" data-url="https://paypa1-secure-login.com/verify">look-alike PayPal</button><button type="button" data-url="https://xn--pypal-4ve.com/login">punycode</button><button type="button" data-url="http://192.168.4.7/bkash/login">IP address</button><button type="button" data-url="https://accounts.google.com/signin">real Google</button></div>
+    <div class="tk-actions"><button class="tk-btn primary" type="button" id="url-run">Analyze URL</button><button class="tk-btn" type="button" id="url-clear">Clear</button></div>
+    <div class="tk-status" id="url-status" aria-live="polite"></div>
+    <div id="lo" aria-live="polite"><p class="tk-empty">Paste a link above. It is analyzed only in this tab; the link is never opened or sent anywhere.</p></div>
+   </div>
+
+   <div class="tk-pane" id="pane-terminal" role="tabpanel" aria-labelledby="tab-terminal" hidden>
+    <div class="tk-pane-head"><div><h3>Ask my terminal</h3><p>A small command-line view of my work. The port scan is simulated and produces no network traffic.</p></div><span class="tk-badge">SIMULATED</span></div>
+    <div class="term">
+     <div class="rh"><b>mpm@portfolio:~</b><span>type help</span></div>
+     <div class="tout" id="tout" aria-live="polite" role="log"></div>
+     <form class="tin" id="tf" autocomplete="off"><label for="ti">$</label><input id="ti" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="Terminal command"></form>
+     <div class="chips" id="chips"></div>
+    </div>
+   </div>
   </div>
  </div>
 </section>
@@ -528,7 +744,66 @@ const VIS=[
  function upd(){const n=+inp.value,out=sh(C,-n),ok=out==P;ct.textContent=out;sv.textContent=n;box.classList.toggle("open",ok);st.textContent=ok?"unlocked":"locked";st.className=ok?"ok":"";$("cgo").hidden=!ok}
  inp.oninput=upd;upd()})();
 
-/* ---------- lab: password + hash ---------- */
+/* ---------- toolkit shell + shared helpers ---------- */
+function tkSetStatus(node,msg,o={}){
+ if(!node)return;node.textContent="";node.classList.toggle("err",!!o.error);
+ if(o.spin){const s=document.createElement("span");s.className="sp";s.setAttribute("aria-hidden","true");node.appendChild(s)}
+ node.appendChild(document.createTextNode(msg));
+}
+(function(){
+ const tabs=[...document.querySelectorAll(".tk-tab")],panes=[...document.querySelectorAll(".tk-pane")];
+ function activate(id,o={}){
+  const tab=tabs.find(t=>t.dataset.tool===id)||tabs[0];if(!tab)return;
+  tabs.forEach(t=>{const on=t===tab;t.setAttribute("aria-selected",on?"true":"false");t.tabIndex=on?0:-1});
+  panes.forEach(p=>p.hidden=p.id!=="pane-"+tab.dataset.tool);
+  if(o.focus)tab.focus();
+  if(o.scroll)document.getElementById("toolkit").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+ }
+ tabs.forEach((t,i)=>{
+  t.addEventListener("click",()=>activate(t.dataset.tool));
+  t.addEventListener("keydown",e=>{
+   let n=-1;
+   if(e.key==="ArrowDown"||e.key==="ArrowRight")n=(i+1)%tabs.length;
+   else if(e.key==="ArrowUp"||e.key==="ArrowLeft")n=(i-1+tabs.length)%tabs.length;
+   else if(e.key==="Home")n=0; else if(e.key==="End")n=tabs.length-1;
+   if(n>-1){e.preventDefault();activate(tabs[n].dataset.tool,{focus:true})}
+  });
+ });
+ document.querySelectorAll("a[data-tool]").forEach(a=>a.addEventListener("click",e=>{
+  const id=a.dataset.tool;
+  if(document.getElementById("pane-"+id)){e.preventDefault();activate(id,{scroll:true})}
+ }));
+ const m=location.hash.match(/^#(?:toolkit|tool)[\/?]([a-z0-9-]+)$/i);
+ if(m)activate(m[1].toLowerCase());
+ else{const q=new URLSearchParams(location.search).get("tool");if(q)activate(q.toLowerCase())}
+ window.tkActivate=activate;
+})();
+
+async function tkCopy(btn,text){
+ if(!text)return;
+ const label=btn.dataset.label||btn.textContent;
+ try{
+  if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}
+  else{
+   const ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");
+   ta.style.cssText="position:fixed;left:-9999px;top:0";document.body.appendChild(ta);ta.select();
+   const ok=document.execCommand("copy");ta.remove();if(!ok)throw new Error("copy failed");
+  }
+  btn.textContent="Copied ✓";btn.classList.remove("bad");btn.classList.add("done");
+ }catch(e){btn.textContent="Copy failed";btn.classList.remove("done");btn.classList.add("bad")}
+ setTimeout(()=>{btn.textContent=label;btn.classList.remove("done","bad")},1500);
+}
+document.querySelectorAll("[data-copy]").forEach(btn=>{
+ btn.dataset.label=btn.textContent;
+ btn.addEventListener("click",()=>{
+  const target=document.getElementById(btn.dataset.copy);
+  if(!target)return;
+  const text=("value" in target&&typeof target.value==="string")?target.value:target.textContent.trim();
+  tkCopy(btn,text);
+ });
+});
+
+/* ---------- password strength ---------- */
 (function(){const pw=$("pw"),pr=$("pr"),pb=$("pb").firstElementChild,C=["password","123456","12345678","123456789","qwerty","admin","letmein","welcome","iloveyou","password1"],
  T=[["second",1],["minute",60],["hour",3600],["day",86400],["year",31536000],["thousand years",3.1536e10],["million years",3.1536e13],["billion years",3.1536e16]];
  function fmt(s){if(s>4.4e17)return"Would survive longer than the universe has existed";if(s<1)return"Would be cracked instantly";
@@ -537,12 +812,217 @@ const VIS=[
   let p=0;/[a-z]/.test(v)&&(p+=26);/[A-Z]/.test(v)&&(p+=26);/\d/.test(v)&&(p+=10);/[^a-zA-Z\d]/.test(v)&&(p+=33);
   const cm=C.includes(v.toLowerCase()),bits=cm?0:v.length*Math.log2(p),s=cm?0:2**bits/2/1e10;
   pb.style.width=Math.min(100,bits/80*100)+"%";
-  pr.textContent=(cm?"On every common-password list. ":"About "+Math.round(bits)+" bits. ")+fmt(s)+" at 10 billion guesses per second."}})();
+  pr.textContent=(cm?"On every common-password list. ":"About "+Math.round(bits)+" bits. ")+fmt(s)+" at 10 billion guesses per second."};
+ pw.oninput()})();
+
+/* ---------- secure password generator ---------- */
+(function(){
+ const len=$("pg-len"),lenOut=$("pg-lenout"),out=$("pg-out"),meta=$("pg-meta"),status=$("pg-status"),
+  opts={upper:$("pg-upper"),lower:$("pg-lower"),digits:$("pg-digits"),symbols:$("pg-symbols")},avoid=$("pg-avoid"),
+  SETS={upper:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",lower:"abcdefghijklmnopqrstuvwxyz",digits:"0123456789",symbols:"!@#$%^&*()-_=+[]{};:,.?/"};
+ const AMB="O0Il1|`'\"";
+ function rnd(n){
+  if(!window.crypto||!crypto.getRandomValues)throw new Error("Secure random numbers are not available in this browser.");
+  const lim=Math.floor(4294967296/n)*n,a=new Uint32Array(1);
+  do{crypto.getRandomValues(a)}while(a[0]>=lim);
+  return a[0]%n;
+ }
+ function fmtGuesses(n){
+  if(!isFinite(n))return"an astronomically large number of";
+  const U=[[1e33,"decillion"],[1e30,"nonillion"],[1e27,"octillion"],[1e24,"septillion"],[1e21,"sextillion"],[1e18,"quintillion"],[1e15,"quadrillion"],[1e12,"trillion"],[1e9,"billion"],[1e6,"million"],[1e3,"thousand"]];
+  for(const[u,name]of U)if(n>=u)return(n/u).toFixed(1)+" "+name;
+  return String(Math.round(n));
+ }
+ function generate(){
+  try{
+   const n=+len.value,active=Object.keys(opts).filter(k=>opts[k].checked);
+   if(!active.length){out.textContent="";meta.textContent="";tkSetStatus(status,"Choose at least one character type.",{error:true});return}
+   if(n<active.length){out.textContent="";meta.textContent="";tkSetStatus(status,"Length must be at least "+active.length+" to include every selected type.",{error:true});return}
+   const pools=active.map(k=>avoid.checked?[...SETS[k]].filter(c=>!AMB.includes(c)).join(""):SETS[k]);
+   if(pools.some(p=>!p.length))throw new Error("A selected character set is empty after removing look-alike characters.");
+   const all=pools.join(""),chars=[];
+   pools.forEach(p=>chars.push(p[rnd(p.length)]));
+   while(chars.length<n)chars.push(all[rnd(all.length)]);
+   for(let i=chars.length-1;i>0;i--){const j=rnd(i+1);[chars[i],chars[j]]=[chars[j],chars[i]]}
+   const pwd=chars.join(""),bits=Math.round(n*Math.log2(all.length));
+   out.textContent=pwd;
+   meta.textContent=bits+" bits of entropy · "+all.length+" possible characters · about "+fmtGuesses(Math.pow(2,bits)/2)+" guesses to search half the keyspace.";
+   tkSetStatus(status,"Generated locally with crypto.getRandomValues(). Nothing was stored.",{});
+  }catch(e){out.textContent="";meta.textContent="";tkSetStatus(status,e.message||"Could not generate a password.",{error:true})}
+ }
+ len.addEventListener("input",()=>{lenOut.textContent=len.value;generate()});
+ Object.values(opts).forEach(o=>o.addEventListener("change",generate));
+ avoid.addEventListener("change",generate);
+ $("pg-run").addEventListener("click",generate);
+ generate();
+})();
+
 (function(){const i=$("hi"),o=$("ho");let prev="";
  async function h(){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(i.value)),
   x=[...new Uint8Array(b)].map(n=>n.toString(16).padStart(2,"0")).join("");
   let d=0;const hl=[...x].map((c,k)=>prev&&c!=prev[k]?(d++,`<b>${c}</b>`):c).join("");o.innerHTML=(prev?`<em>Before</em>${prev}`:"")+`<em>Now</em>${hl}`+(prev?`<em>${d} of 64 digits changed</em>`:"");prev=x}catch(e){o.textContent="Hashing needs a secure (https) page."}}
  i.oninput=h;h()})();
+
+/* ---------- advanced hash generator ---------- */
+(function(){
+ const input=$("hg-input"),algo=$("hg-algo"),out=$("hg-out"),meta=$("hg-len"),status=$("hg-status"),run=$("hg-run");
+ let seq=0,timer=0;
+ async function compute(){
+  const my=++seq,text=input.value;
+  if(!text){out.textContent="";meta.textContent="";tkSetStatus(status,"Enter some text to hash.");return}
+  tkSetStatus(status,"Computing "+algo.value+" with the Web Crypto API…",{spin:true});
+  out.textContent="";
+  try{
+   if(!window.crypto||!crypto.subtle)throw new Error("Web Crypto is unavailable. Open this page over https:// or localhost.");
+   const buf=await crypto.subtle.digest(algo.value,new TextEncoder().encode(text));
+   if(my!==seq)return;
+   const hex=Array.from(new Uint8Array(buf),b=>b.toString(16).padStart(2,"0")).join("");
+   out.textContent=hex;
+   meta.textContent=algo.value+" · "+hex.length+" hex characters · "+buf.byteLength+" bytes";
+   tkSetStatus(status,"Hash computed locally. The input never left this page.",{});
+  }catch(e){if(my!==seq)return;out.textContent="";meta.textContent="";tkSetStatus(status,e.message||"Hashing failed.",{error:true})}
+ }
+ input.addEventListener("input",()=>{clearTimeout(timer);timer=setTimeout(compute,180)});
+ algo.addEventListener("change",compute);
+ run.addEventListener("click",compute);
+ compute();
+})();
+
+/* ---------- base64 ---------- */
+(function(){
+ let mode="encode";
+ const input=$("b64-in"),out=$("b64-out"),status=$("b64-status"),enc=$("b64-enc"),dec=$("b64-dec"),run=$("b64-run"),
+  inLabel=$("b64-inlabel"),outLabel=$("b64-outlabel");
+ function setMode(m){
+  mode=m;const isEnc=m==="encode";
+  enc.setAttribute("aria-pressed",isEnc?"true":"false");dec.setAttribute("aria-pressed",isEnc?"false":"true");
+  enc.classList.toggle("primary",isEnc);dec.classList.toggle("primary",!isEnc);
+  inLabel.textContent=isEnc?"Text to encode":"Base64 to decode";
+  outLabel.textContent=isEnc?"Base64 output":"Decoded text";
+  input.placeholder=isEnc?"Type or paste text…":"Paste Base64, e.g. SGVsbG8sIHdvcmxkIQ==";
+  run.textContent=isEnc?"Encode":"Decode";
+  out.textContent="";tkSetStatus(status,"");
+ }
+ function encode(text){
+  const bytes=new TextEncoder().encode(text);let bin="";
+  for(let i=0;i<bytes.length;i+=0x8000)bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));
+  return btoa(bin);
+ }
+ function decode(str){
+  const clean=str.replace(/\s+/g,"");
+  if(!clean)throw new Error("Enter Base64 text to decode.");
+  if(!/^[A-Za-z0-9+/]+={0,2}$/.test(clean))throw new Error("Invalid Base64: use only A–Z, a–z, 0–9, +, / and up to two = signs at the end.");
+  if(clean.length%4===1)throw new Error("Invalid Base64 length. The input is missing characters.");
+  let bin;
+  try{bin=atob(clean.padEnd(Math.ceil(clean.length/4)*4,"="))}catch(e){throw new Error("Invalid Base64 input.")}
+  const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));
+  try{return new TextDecoder("utf-8",{fatal:true}).decode(bytes)}
+  catch(e){throw new Error("The Base64 is valid, but the decoded bytes are not valid UTF-8 text.")}
+ }
+ async function go(){
+  const val=input.value;out.textContent="";
+  if(!val.trim()){tkSetStatus(status,"Enter something to "+mode+".",{error:true});return}
+  tkSetStatus(status,mode==="encode"?"Encoding locally…":"Decoding locally…",{spin:true});
+  await new Promise(r=>setTimeout(r,reduce?0:80));
+  try{
+   out.textContent=mode==="encode"?encode(val):decode(val);
+   tkSetStatus(status,mode==="encode"?"Encoded locally. Nothing was uploaded.":"Decoded locally. Treat decoded content as untrusted.",{});
+  }catch(e){tkSetStatus(status,e.message||"Conversion failed.",{error:true})}
+ }
+ enc.addEventListener("click",()=>setMode("encode"));
+ dec.addEventListener("click",()=>setMode("decode"));
+ run.addEventListener("click",go);
+ input.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();go()}});
+ $("b64-swap").addEventListener("click",()=>{
+  const o=out.textContent;
+  if(!o){tkSetStatus(status,"Nothing to move yet. Convert something first.",{error:true});return}
+  input.value=o;setMode(mode==="encode"?"decode":"encode");
+  tkSetStatus(status,"Output moved to the input. Run again to convert back.",{});
+ });
+ $("b64-clear").addEventListener("click",()=>{input.value="";out.textContent="";tkSetStatus(status,"");input.focus()});
+ setMode("encode");
+})();
+
+/* ---------- JWT decoder ---------- */
+(function(){
+ const input=$("jwt-in"),status=$("jwt-status"),view=$("jwt-view"),head=$("jwt-head"),payload=$("jwt-payload"),
+  metaBox=$("jwt-meta-box"),meta=$("jwt-meta"),warn=$("jwt-warn"),sigBox=$("jwt-sig-box"),sig=$("jwt-sig");
+ function b64urlDecode(seg){
+  if(!/^[A-Za-z0-9_-]+$/.test(seg))throw new Error("A token segment contains characters that are not valid Base64URL.");
+  let s=seg.replace(/-/g,"+").replace(/_/g,"/");
+  s=s.padEnd(Math.ceil(s.length/4)*4,"=");
+  let bin;
+  try{bin=atob(s)}catch(e){throw new Error("The token is not valid Base64URL.")}
+  const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));
+  try{return new TextDecoder("utf-8",{fatal:true}).decode(bytes)}
+  catch(e){throw new Error("A token segment could not be decoded as UTF-8 text.")}
+ }
+ function readJSON(seg,name){
+  let obj;
+  try{obj=JSON.parse(b64urlDecode(seg))}catch(e){throw new Error("The "+name+" is not valid JSON.")}
+  if(!obj||typeof obj!=="object"||Array.isArray(obj))throw new Error("The "+name+" must be a JSON object.");
+  return obj;
+ }
+ function enc64url(obj){
+  const bytes=new TextEncoder().encode(JSON.stringify(obj));let bin="";
+  bytes.forEach(b=>bin+=String.fromCharCode(b));
+  return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+ }
+ function makeSample(){
+  const now=Math.floor(Date.now()/1000);
+  return enc64url({alg:"HS256",typ:"JWT"})+"."+enc64url({sub:"demo-user",name:"Md. Prince Mahmud",role:"security-analyst",iat:now-300,exp:now+3600})+"."+"c2FtcGxlLXNpZ25hdHVyZS1ub3QtdmVyaWZpZWQ";
+ }
+ function addRow(label,value){
+  const d=document.createElement("div"),s=document.createElement("span"),b=document.createElement("b");
+  s.textContent=label;b.textContent=value;d.append(s,b);meta.appendChild(d);
+ }
+ function addWarn(text){
+  const p=document.createElement("p");p.className="tk-warn";p.textContent=text;warn.appendChild(p);
+ }
+ async function decode(){
+  view.hidden=true;metaBox.hidden=true;sigBox.hidden=true;warn.textContent="";meta.textContent="";
+  const raw=input.value.trim().replace(/^Bearer\s+/i,"");
+  if(!raw){tkSetStatus(status,"Paste a JWT to decode.",{error:true});return}
+  tkSetStatus(status,"Decoding header and payload locally…",{spin:true});
+  await new Promise(r=>setTimeout(r,reduce?0:90));
+  try{
+   const parts=raw.split(".");
+   if(parts.length===5)throw new Error("This looks like an encrypted JWT (JWE, five parts). Its payload is encrypted and cannot be decoded without the key.");
+   if(parts.length!==3)throw new Error("A JWT normally has three parts separated by dots: header.payload.signature.");
+   if(!parts[0]||!parts[1])throw new Error("The header or payload segment is empty.");
+   const h=readJSON(parts[0],"header"),p=readJSON(parts[1],"payload");
+   head.textContent=JSON.stringify(h,null,2);
+   payload.textContent=JSON.stringify(p,null,2);
+   sig.textContent=parts[2]||"(empty — this token has no signature segment)";
+   if(h.alg)addRow("Algorithm (alg)",String(h.alg));
+   if(h.typ)addRow("Type (typ)",String(h.typ));
+   if(h.kid)addRow("Key ID (kid)",String(h.kid));
+   const now=Math.floor(Date.now()/1000);
+   if(typeof p.exp==="number"){
+    const expired=p.exp<=now;
+    addRow("Expires (exp)",new Date(p.exp*1000).toLocaleString()+(expired?" · expired":" · valid by clock"));
+    if(expired)addWarn("The exp claim is in the past. A verifier should reject this token.");
+   }
+   if(typeof p.nbf==="number"){
+    addRow("Not before (nbf)",new Date(p.nbf*1000).toLocaleString()+(p.nbf>now?" · not valid yet":""));
+    if(p.nbf>now)addWarn("The nbf claim is in the future. A verifier should reject this token until that time.");
+   }
+   if(typeof p.iat==="number")addRow("Issued at (iat)",new Date(p.iat*1000).toLocaleString());
+   ["iss","aud","sub","jti"].forEach(k=>{if(p[k]!=null)addRow(k,typeof p[k]==="string"?p[k]:JSON.stringify(p[k]))});
+   if(h.alg==="none")addWarn("The header says alg=none. This token is unsigned, so anyone can change its contents.");
+   if(!parts[2])addWarn("No signature segment is present. The token is unsigned or the signature was stripped.");
+   if(typeof p.exp!=="number")addWarn("The payload has no exp (expiration) claim, so the token has no built-in expiry.");
+   view.hidden=false;metaBox.hidden=false;sigBox.hidden=false;
+   tkSetStatus(status,"Decoded locally. The signature was not verified.",{});
+  }catch(e){
+   tkSetStatus(status,e.message||"Could not decode this token.",{error:true});
+  }
+ }
+ $("jwt-run").addEventListener("click",decode);
+ $("jwt-sample").addEventListener("click",()=>{input.value=makeSample();decode()});
+ $("jwt-clear").addEventListener("click",()=>{input.value="";view.hidden=true;metaBox.hidden=true;sigBox.hidden=true;tkSetStatus(status,"");input.focus()});
+ input.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();decode()}});
+})();
 
 
 
@@ -576,49 +1056,237 @@ const VIS=[
  $("chips").onclick=e=>{if(e.target.tagName=="BUTTON")run(e.target.textContent)};
  print("MPM terminal. Type a command, or tap one below. Start with help.")})();
 
-/* ---------- link checker ---------- */
-(function(){const inp=$("lu"),out=$("lo"),SLD=["co","com","org","net","gov","edu","ac","ltd"],
- B=["paypal","google","facebook","microsoft","apple","amazon","github","bkash","nagad","netflix","instagram","whatsapp","binance","rocket","outlook","linkedin","twitter","telegram"],
- BT=["xyz","top","click","zip","tk","ml","ga","cf","gq","work","rest","icu","buzz","support"],
- SH=["bit.ly","tinyurl.com","t.co","goo.gl","is.gd","cutt.ly","rebrand.ly","ow.ly"],
- KW=["login","signin","verify","secure","account","update","confirm","wallet","password","billing","suspend"];
- function reg(h){const p=h.split(".");if(p.length<=2)return{sub:[],dom:h};const n=(p[p.length-1].length==2&&SLD.includes(p[p.length-2]))?3:2;return{sub:p.slice(0,p.length-n),dom:p.slice(-n).join(".")}}
- function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
- function check(){const raw=inp.value.trim();out.textContent="";
-  if(!raw){out.appendChild(el("p","gx","Paste a link above. It is only analysed here; the link is never opened or sent anywhere."));return}
-  const hasS=/^[a-z][a-z0-9+.-]*:\/\//i.test(raw);let u;
-  try{u=new URL(hasS?raw:"https://"+raw)}catch(e){out.appendChild(el("p","gx","That does not look like a valid link. Include the full address, for example https://example.com."));return}
-  if(!/^https?:$/.test(u.protocol)){out.appendChild(el("p","gx","Only http and https links can be checked."));return}
-  const h=u.hostname.toLowerCase(),isIP=/^\d{1,3}(\.\d{1,3}){3}$/.test(h)||h.startsWith("["),r=isIP?{sub:[],dom:h}:reg(h),label=r.dom.split(".")[0],tld=h.split(".").pop(),
-   rest=u.pathname+u.search+u.hash,F=[];let sc=0;
-  const bad=(t,n)=>{F.push(["w",t]);sc+=n};
-  if(hasS&&u.protocol=="http:")bad("No https: anything you type can be read on the way. Real login pages use https.",15);
-  if(isIP)bad("The address is a raw IP number, not a name. Real services use their own domain.",35);
-  if(u.username||u.password)bad("The link has a “user@” part before the host. This trick makes a fake address look real; the true host comes after the @.",30);
-  if(h.includes("xn--"))bad("The domain uses international look-alike characters (punycode) that can imitate normal letters.",35);
-  if(!isIP&&r.sub.length>=3)bad("Many nested subdomains ("+r.sub.length+"). Attackers pile these up to bury the real domain.",15);
-  const wrong=B.find(b=>h.includes(b)&&label!=b);
-  const norm=label.replace(/0/g,"o").replace(/1/g,"l").replace(/3/g,"e").replace(/5/g,"s"),look=B.find(b=>norm.includes(b)&&!label.includes(b));
-  if(look)bad("The domain imitates “"+look+"” by swapping letters for digits.",35);
-  else if(wrong)bad("The name “"+wrong+"” appears in the address, but the real domain is "+r.dom+". Brand names in front of the real domain prove nothing.",45);
-  if(!isIP&&BT.includes(tld))bad("The “."+tld+"” ending is cheap and often abused for throwaway sites.",15);
-  if(SH.includes(r.dom))bad("A link shortener hides where you end up. Expand it first.",25);
-  if((label.match(/-/g)||[]).length>=2)bad("Several hyphens in the domain name. Real brands rarely use them.",10);
-  const kw=KW.filter(k=>(h+rest).toLowerCase().includes(k));
-  if(kw.length)bad("Pressure words in the address: "+kw.slice(0,3).join(", ")+". Common on phishing pages, but also on real ones.",10);
-  if(u.port&&!["80","443"].includes(u.port))bad("Unusual port "+u.port+".",10);
-  if(raw.length>90)bad("Very long link, which can hide the important part.",5);
-  if(u.protocol=="https:"&&!F.length)F.push(["g","Uses https and none of the common tricks below were found."]);
-  else if(u.protocol=="https:")F.push(["g","Uses https. This only means the connection is encrypted, not that the site is honest."]);
-  sc=Math.min(100,sc);const lvl=sc>=50?"hi":sc>=20?"md":"lo",txt=sc>=50?"Likely phishing":sc>=20?"Suspicious":"No obvious red flags";
-  const lb=el("p","lb");lb.append(el("i",0,u.protocol+"//"+(r.sub.length?r.sub.join(".")+".":"")),el("b",0,r.dom),el("i",0,(u.port?":"+u.port:"")+rest.slice(0,80)));
-  out.append(lb,el("p","lk","The highlighted part is the real domain. It is the only part that shows who owns the site."));
-  out.append(el("p","vd "+lvl,txt+" ("+sc+"/100)"));
-  const m=el("div","meter"),b=el("i");b.style.width=Math.max(sc,3)+"%";b.style.background=lvl=="hi"?"#e5484d":lvl=="md"?"#ff9f43":"#3ddc6b";m.appendChild(b);out.appendChild(m);
-  const ul=el("ul","lf");F.forEach(f=>ul.appendChild(el("li",f[0],f[1])));out.appendChild(ul);
-  out.appendChild(el("small",0,"This is a pattern check, not a safety guarantee. It cannot see a site’s reputation, so a clean result can still be a scam. When unsure, type the address yourself or ask the sender through another channel."))}
- inp.oninput=check;
- document.querySelectorAll("#phish .sh button").forEach(b=>b.onclick=()=>{inp.value=b.dataset.f;check()})})();
+/* ---------- phishing URL analyzer ---------- */
+(function(){
+ const inp=$("lu"),out=$("lo"),status=$("url-status");
+ const SLD=new Set(["co","com","org","net","gov","edu","ac","ltd","plc","sch","nhs","mil","mod","gob","gouv","info","biz"]);
+ const BRANDS={paypal:"paypal.com",google:"google.com",facebook:"facebook.com",microsoft:"microsoft.com",apple:"apple.com",amazon:"amazon.com",github:"github.com",bkash:"bkash.com",nagad:"nagad.com",netflix:"netflix.com",instagram:"instagram.com",whatsapp:"whatsapp.com",binance:"binance.com",outlook:"outlook.com",linkedin:"linkedin.com",twitter:"twitter.com",telegram:"telegram.com",dropbox:"dropbox.com",adobe:"adobe.com",coinbase:"coinbase.com",discord:"discord.com",tiktok:"tiktok.com",youtube:"youtube.com",gmail:"gmail.com",yahoo:"yahoo.com",icloud:"icloud.com",dhl:"dhl.com",fedex:"fedex.com",visa:"visa.com",mastercard:"mastercard.com",steam:"steampowered.com",roblox:"roblox.com",spotify:"spotify.com"};
+ const OFFICIAL=new Set([...Object.values(BRANDS),"google.co.uk","amazon.co.uk","paypal.co.uk","apple.co.uk"]);
+ const BAD_TLDS=new Set(["xyz","top","click","zip","tk","ml","ga","cf","gq","work","rest","icu","buzz","support","cam","monster","quest","cyou","sbs","cfd","lending","loan","men","date","review","country","stream","download","racing","win","bid","trade","science","party","gdn","kim","ink"]);
+ const SHORT=new Set(["bit.ly","tinyurl.com","t.co","goo.gl","is.gd","cutt.ly","rebrand.ly","ow.ly","buff.ly","shorturl.at","rb.gy","tiny.cc","lnkd.in","t.ly","v.gd","s.id","bl.ink"]);
+ const KW=["login","signin","verify","secure","account","update","confirm","wallet","password","billing","suspend","unlock","support","auth","recover"];
+ const HOMO={"а":"a","в":"b","с":"c","ԁ":"d","е":"e","ё":"e","һ":"h","і":"i","ј":"j","к":"k","ӏ":"l","м":"m","н":"h","о":"o","р":"p","ԛ":"q","г":"r","ѕ":"s","т":"t","у":"y","ѵ":"v","ԝ":"w","х":"x","ь":"b","ӕ":"ae","α":"a","β":"b","ε":"e","ι":"i","κ":"k","ν":"v","ο":"o","ρ":"p","τ":"t","υ":"u","χ":"x","γ":"y","η":"n","μ":"m","ϲ":"c"};
+ const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+ function isV4(h){if(!/^(?:\d{1,3}\.){3}\d{1,3}$/.test(h))return false;return h.split(".").every(p=>+p<=255)}
+ function isPrivate(h){if(!isV4(h))return false;const p=h.split(".").map(Number);return p[0]===10||p[0]===127||p[0]===0||(p[0]===192&&p[1]===168)||(p[0]===172&&p[1]>=16&&p[1]<=31)||(p[0]===169&&p[1]===254)}
+ function registrable(h){const p=h.split(".");if(p.length<=2)return{sub:[],dom:h};const n=(p[p.length-1].length===2&&SLD.has(p[p.length-2]))?3:2;return{sub:p.slice(0,p.length-n),dom:p.slice(-n).join(".")}}
+ function punycodeDecode(input){
+  const base=36,tMin=1,tMax=26,skew=38,damp=700,initialBias=72,initialN=128;
+  let n=initialN,i=0,bias=initialBias;const out=[];
+  const basic=input.lastIndexOf("-");
+  if(basic>0)for(let j=0;j<basic;j++)out.push(input.charCodeAt(j));
+  let idx=basic>0?basic+1:0;
+  while(idx<input.length){
+   const oldi=i;let w=1;
+   for(let k=base;;k+=base){
+    if(idx>=input.length)throw new Error("bad punycode");
+    const c=input.charCodeAt(idx++);
+    const digit=c>=48&&c<=57?c-22:c>=65&&c<=90?c-65:c>=97&&c<=122?c-97:base;
+    if(digit>=base)throw new Error("bad punycode");
+    i+=digit*w;
+    const t=k<=bias?tMin:k>=bias+tMax?tMax:k-bias;
+    if(digit<t)break;
+    w*=base-t;
+    if(w>Number.MAX_SAFE_INTEGER)throw new Error("bad punycode");
+   }
+   const len=out.length+1;
+   let delta=oldi===0?Math.floor(i/damp):Math.floor((i-oldi)/2);
+   delta+=Math.floor(delta/len);
+   let k2=0;
+   while(delta>(base-tMin)*tMax/2){delta=Math.floor(delta/(base-tMin));k2+=base}
+   bias=Math.floor(k2+(base-tMin+1)*delta/(delta+skew));
+   n+=Math.floor(i/len);i%=len;out.splice(i,0,n);i++;
+  }
+  return String.fromCodePoint.apply(null,out);
+ }
+ function decodeHost(h){return h.split(".").map(l=>{if(!l.startsWith("xn--"))return l;try{return punycodeDecode(l.slice(4))}catch(e){return l}}).join(".")}
+ function normLabel(s){return s.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().split("").map(c=>HOMO[c]||c).join("").replace(/0/g,"o").replace(/1/g,"l").replace(/3/g,"e").replace(/5/g,"s").replace(/\$/g,"s").replace(/@/g,"a")}
+ function lev(a,b){
+  const m=a.length,n=b.length,d=Array.from({length:m+1},(_,i)=>[i]);
+  for(let j=1;j<=n;j++)d[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[m][n];
+ }
+ function scripts(s){
+  const r=[];
+  if(/[a-z]/i.test(s))r.push("Latin");
+  if(/[\u0400-\u04FF]/.test(s))r.push("Cyrillic");
+  if(/[\u0370-\u03FF]/.test(s))r.push("Greek");
+  if(/[\u0530-\u058F]/.test(s))r.push("Armenian");
+  if(/[\u0590-\u05FF]/.test(s))r.push("Hebrew");
+  if(/[\u0600-\u06FF]/.test(s))r.push("Arabic");
+  if(/[\u0900-\u097F]/.test(s))r.push("Devanagari");
+  if(/[\u0980-\u09FF]/.test(s))r.push("Bengali");
+  if(/[\u3040-\u30FF]/.test(s))r.push("Japanese");
+  if(/[\u4E00-\u9FFF]/.test(s))r.push("Han");
+  if(/[\uAC00-\uD7AF]/.test(s))r.push("Hangul");
+  return r;
+ }
+ function analyze(raw){
+  const findings=[],seen=new Set(),add=(sev,title,detail)=>{if(!seen.has(title)){seen.add(title);findings.push({sev,title,detail})}};
+  const hasScheme=/^[a-z][a-z0-9+.-]*:\/\//i.test(raw);
+  let u;
+  try{u=new URL(hasScheme?raw:"https://"+raw)}catch(e){return{error:"That does not look like a valid URL. Include the full address, for example https://example.com."}}
+  if(!/^https?:$/.test(u.protocol))return{error:"Only http and https links can be analyzed."};
+  const host=u.hostname.toLowerCase().replace(/\.$/,"");
+  const v6=host.startsWith("[")&&host.endsWith("]"),bare=v6?host.slice(1,-1):host;
+  const ip4=isV4(bare),ip6=v6||(/^[0-9a-f:]+$/i.test(bare)&&bare.includes(":")),ip=ip4||ip6,numeric=/^\d+$/.test(bare);
+  const r=(ip||numeric)?{sub:[],dom:bare}:registrable(bare);
+  const label=(ip||numeric)?bare:r.dom.split(".")[0],tld=(ip||numeric)?"":bare.split(".").pop();
+  const decoded=(ip||numeric)?bare:decodeHost(bare),decodedR=(ip||numeric)?{sub:[],dom:decoded}:registrable(decoded);
+  const decodedLabel=(ip||numeric)?decoded:decodedR.dom.split(".")[0];
+  const path=u.pathname||"",full=path+u.search+u.hash;
+
+  if(hasScheme&&u.protocol==="http:")add("medium","Connection is not encrypted","The URL uses http://, so traffic can be read or modified in transit. This does not prove the site is malicious, but login and payment pages should use https://.");
+  if(u.username||u.password)add("high","Credentials before the host","The part before “@” is not the website. The real host comes after the @, so a link like paypal.com@evil.example actually opens evil.example.");
+  if(ip)add("high","Raw IP address instead of a domain","The address is a number rather than a name. Legitimate public services normally use their own domain. A raw IP can still be legitimate, but it hides who operates the server.");
+  else if(numeric)add("high","Numeric host","The host is purely numeric, which can be an alternative encoding of an IP address. It hides the real destination and is unusual in normal links.");
+  if(ip&&isPrivate(bare))add("medium","Private or local address","This points to a private network range (such as a home router). Links in messages should not normally send you to a local address.");
+
+  if(bare.includes("xn--")){
+   const ok=decoded!==bare;
+   add("medium","Punycode-encoded domain","The domain contains “xn--”, which encodes international characters. "+(ok?"It decodes to “"+decoded+"”. ":"It could not be decoded here. ")+"Punycode is used by legitimate international sites, but it can also hide look-alike letters.");
+  }
+  const sc=scripts(decodedLabel);
+  if(sc.includes("Latin")&&sc.some(s=>s!=="Latin"))add("high","Mixed writing systems in the domain","The domain mixes Latin letters with characters from another script ("+sc.join(", ")+"). Attackers use visually similar letters from different alphabets to make a fake name look familiar.");
+  else if(sc.some(s=>s!=="Latin"))add("medium","Internationalized domain characters","The domain uses non-Latin characters. This is normal for many real sites, but verify the spelling because some characters can resemble Latin letters.");
+  const homo=[...new Set([...decodedLabel].filter(c=>HOMO[c]))];
+  if(homo.length)add("high","Unicode look-alike characters","The domain contains characters that look like ordinary letters but are not: "+homo.join(" ")+". This is a homograph technique used to imitate familiar names.");
+
+  if(!ip&&!numeric&&r.sub.length>=3)add("medium","Deeply nested subdomains","There are "+r.sub.length+" subdomain levels. Attackers pile these up so the real registered domain ("+r.dom+") is buried far to the right.");
+  if(!ip&&!numeric&&bare.length>40)add("low","Long hostname","The hostname is unusually long, which can make the important part harder to spot.");
+  if(!ip&&!numeric&&label.length>28)add("low","Long domain label","The main part of the domain has "+label.length+" characters. Long labels are sometimes used to crowd a familiar name into an address.");
+  if(!ip&&!numeric){
+   const hy=(label.match(/-/g)||[]).length;
+   if(hy>=2)add("medium","Multiple hyphens in the domain","The domain label contains "+hy+" hyphens. Real brands rarely need several hyphens, while phishing domains often combine words this way.");
+   if(/^-|-$/.test(label))add("medium","Domain starts or ends with a hyphen","A leading or trailing hyphen in a domain label is unusual and often used to build look-alike names.");
+   if((label.match(/\d/g)||[]).length>=3&&/[a-z]/.test(label))add("medium","Digits mixed into the domain name","The domain mixes several digits with letters. This is a common way to imitate a brand, for example replacing letters with 0 or 1.");
+  }
+  if(!ip&&!numeric&&BAD_TLDS.has(tld))add("medium","High-abuse top-level domain","The ."+tld+" ending is cheap or frequently abused for throwaway sites. Many legitimate sites use it too, so treat this as one signal, not proof.");
+  if(!ip&&!numeric&&SHORT.has(r.dom))add("medium","Link shortener hides the destination","The registered domain is a shortening service. The visible link does not show where it really leads. Expand it through the service or ask the sender before opening it.");
+
+  if(!ip&&!numeric){
+   const norm=normLabel(decodedLabel);
+   for(const[brand,official]of Object.entries(BRANDS)){
+    if(norm===brand){
+     if(decodedLabel.toLowerCase()===brand){
+      if(!OFFICIAL.has(r.dom))add("medium","Brand name on a different registered domain","The domain label is “"+brand+"”, but the registered domain is “"+r.dom+"”. Ownership cannot be confirmed from the URL alone. Check the brand’s official site or app.");
+     }else if(homo.length){
+      add("high","Look-alike domain","After normalizing look-alike characters, “"+decodedLabel+"” reads as “"+brand+"”. This is a common impersonation technique.");
+     }else{
+      add("high","Digits or symbols used to imitate letters","“"+decodedLabel+"” only becomes “"+brand+"” after replacing digits or symbols with letters. This is a common look-alike trick.");
+     }
+     break;
+    }
+    const d=lev(norm,brand),tol=brand.length>=8?2:1;
+    if(d>0&&d<=tol){
+     add("high","Look-alike domain","“"+decodedLabel+"” is only "+d+" character"+(d>1?"s":"")+" different from “"+brand+"”. Attackers register near-miss spellings to catch typing mistakes and hurried clicks.");
+     break;
+    }
+   }
+   const subStr=r.sub.join(".").toLowerCase();
+   for(const brand of Object.keys(BRANDS)){
+    if(subStr.includes(brand)){
+     add("high","Brand name in a subdomain","The address contains “"+brand+"”, but the real registered domain is “"+r.dom+"”. Anything before that domain is chosen by whoever controls "+r.dom+", not by "+brand+".");
+     break;
+    }
+   }
+   const compact=decodedLabel.replace(/[^a-z0-9]/g,"");
+   for(const brand of Object.keys(BRANDS)){
+    if(norm.includes(brand)&&!decodedLabel.toLowerCase().includes(brand)&&/[0135$@]/.test(decodedLabel)){
+     add("high","Digits or symbols used to imitate letters","“"+decodedLabel+"” contains “"+brand+"” only after digits or symbols are read as letters. This is a common look-alike trick.");
+     break;
+    }
+   }
+   for(const brand of Object.keys(BRANDS)){
+    if(compact!==brand&&compact.includes(brand)&&(decodedLabel.includes("-")||/secure|login|signin|verify|account|update|support|wallet|billing|auth|official/.test(decodedLabel))){
+     add("high","Brand name combined with extra words","“"+decodedLabel+"” contains “"+brand+"” plus extra words. Adding words like “secure”, “login” or “verify” to a brand is a common phishing pattern.");
+     break;
+    }
+   }
+  }
+
+  if(/\.(exe|scr|bat|cmd|pif|vbs|vbe|js|jse|wsf|hta|msi|apk|dmg|iso|img|zip|rar|7z)(?:$|[?#])/i.test(path))add("medium","Link points to a downloadable file","The path ends in a file type that can install software or run code. Do not run downloads from a link you did not expect, even if the page looks familiar.");
+  if(/%2f|%5c|%00/i.test(full))add("high","Encoded path separators","The URL contains encoded slashes or null bytes. These can disguise the real path and are rarely needed in ordinary links.");
+  const enc=(full.match(/%[0-9a-f]{2}/gi)||[]).length;
+  if(enc>=3)add("medium","Heavy percent-encoding","The path or query contains "+enc+" percent-encoded bytes. Encoding is normal in small amounts, but heavy use can hide characters and parameters.");
+  if(path.includes("//"))add("low","Double slash in the path","The path contains “//”. Some servers treat this differently from a single slash, which can be used to confuse filters.");
+  if(path.includes(".."))add("medium","Parent-directory sequence","The path contains “..”, which can move outside the expected folder on some servers.");
+  const segs=path.split("/").filter(Boolean);
+  if(segs.length>=7)add("low","Deeply nested path","The path has "+segs.length+" segments. Long paths can push the meaningful part out of view.");
+  for(const[k,v]of u.searchParams){
+   if(/^(url|redirect|next|return|continue|target|dest|destination|goto|out|link)$/i.test(k)&&(v.startsWith("http")||v.startsWith("//"))){
+    add("medium","Redirect parameter contains another address","The query parameter “"+k+"” holds a second URL. If the site does not validate it, the link can redirect you somewhere else after the first page loads.");
+    break;
+   }
+  }
+  const hostTokens=decodedLabel.split(/[^a-z0-9]+/).filter(Boolean);
+  const kwHost=KW.filter(k=>hostTokens.includes(k));
+  if(kwHost.length>=2)add("medium","Pressure words in the domain","The hostname contains several words such as "+kwHost.slice(0,3).join(", ")+". These appear often in phishing links, although real services use them too.");
+  else if(kwHost.length===1)add("low","Pressure word in the domain","The hostname contains “"+kwHost[0]+"”. This is common in phishing, but also in legitimate login pages, so judge it together with the other signals.");
+  const kwPath=KW.filter(k=>full.toLowerCase().includes(k));
+  if(kwPath.length>=3)add("low","Pressure words in the path or query","The rest of the URL contains several words such as "+kwPath.slice(0,3).join(", ")+". This can be used to make a page look like an account or verification screen.");
+  if(raw.length>120)add("low","Very long URL","The link is "+raw.length+" characters long. Extra length can hide the real destination or important parameters.");
+  if(u.port&&!["80","443"].includes(u.port))add("medium","Unusual network port","The URL uses port "+u.port+" instead of the normal web ports. This is not automatically malicious, but it is unusual for a public login page.");
+
+  const weight={high:30,medium:15,low:5,info:0};
+  const score=Math.min(100,findings.reduce((a,f)=>a+weight[f.sev],0));
+  const level=score>=60?"hi":score>=25?"md":score>0?"lo":"none";
+  const title=score>=60?"Strong phishing indicators":score>=25?"Several warning signs":score>0?"A few unusual patterns":"No obvious warning signs in the URL text";
+  return{u,r,ip,numeric,label,tld,decoded,score,level,title,findings};
+ }
+ function render(data){
+  const{u,r,ip,numeric,decoded,score,level,title,findings}=data;
+  out.replaceChildren();
+  const lb=el("p","tk-url");
+  if(ip||numeric)lb.appendChild(el("b",0,u.hostname));
+  else{
+   lb.append(el("i",0,u.protocol+"//"+(r.sub.length?r.sub.join(".")+".":"")),el("b",0,r.dom),el("i",0,(u.port?":"+u.port:"")+u.pathname+u.search+u.hash));
+  }
+  out.appendChild(lb);
+  out.appendChild(el("p","tk-note","Highlighted text is the registered domain. It is the part that identifies who controls the site; everything before it is a subdomain."));
+  if(decoded!==u.hostname.toLowerCase().replace(/\.$/,""))out.appendChild(el("p","tk-note","Punycode decodes to: "+decoded));
+  const row=el("div","tk-result"),risk=el("div","tk-risk "+level,title),small=el("small",0,"heuristic result · "+score+"/100");
+  risk.appendChild(small);row.appendChild(risk);
+  const counts={high:0,medium:0,low:0,info:0};findings.forEach(f=>counts[f.sev]++);
+  const scoreBox=el("div","tk-score");
+  scoreBox.appendChild(document.createTextNode(String(score)+" "));
+  scoreBox.appendChild(el("span",0,"/ 100 · "+counts.high+" high, "+counts.medium+" medium, "+counts.low+" low"));
+  row.appendChild(scoreBox);
+  out.appendChild(row);
+  const meter=el("div","meter"),bar=el("i");
+  bar.style.width=Math.max(score,3)+"%";
+  bar.style.background=level==="hi"?"#e5484d":level==="md"?"#ff9f43":level==="lo"?"#ffd166":"#3cc8ff";
+  meter.appendChild(bar);out.appendChild(meter);
+  if(findings.length){
+   const ul=el("ul","tk-find"),order={high:0,medium:1,low:2,info:3};
+   findings.slice().sort((a,b)=>order[a.sev]-order[b.sev]).forEach(f=>{
+    const li=el("li",f.sev);li.appendChild(el("span","sev",f.sev));li.appendChild(el("b",0,f.title));li.appendChild(el("p",0,f.detail));ul.appendChild(li);
+   });
+   out.appendChild(ul);
+  }else{
+   out.appendChild(el("p","tk-empty","None of the built-in patterns matched. That is not a safety guarantee: this tool does not check reputation, certificates, page content or malware."));
+  }
+  out.appendChild(el("p","tk-note","This is a pattern check, not a safety verdict. It never contacts the site and cannot prove a URL is safe or malicious. When in doubt, type the address yourself or ask the sender through another channel."));
+ }
+ async function run(){
+  const raw=inp.value.trim();
+  if(!raw){out.replaceChildren(el("p","tk-empty","Paste a link above. It is analyzed only in this tab; the link is never opened or sent anywhere."));tkSetStatus(status,"");return}
+  tkSetStatus(status,"Analyzing the URL locally…",{spin:true});
+  await new Promise(r=>setTimeout(r,reduce?0:90));
+  try{
+   const data=analyze(raw);
+   if(data.error){out.replaceChildren(el("p","tk-empty",data.error));tkSetStatus(status,data.error,{error:true});return}
+   render(data);
+   tkSetStatus(status,"Analysis complete. Nothing was sent over the network.",{});
+  }catch(e){out.replaceChildren(el("p","tk-empty","The URL could not be analyzed: "+(e.message||"unknown error")));tkSetStatus(status,"Analysis failed.",{error:true})}
+ }
+ $("url-run").addEventListener("click",run);
+ $("url-clear").addEventListener("click",()=>{inp.value="";out.replaceChildren(el("p","tk-empty","Paste a link above. It is analyzed only in this tab; the link is never opened or sent anywhere."));tkSetStatus(status,"");inp.focus()});
+ inp.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();run()}});
+ document.querySelectorAll("#url-samples button").forEach(b=>b.addEventListener("click",()=>{inp.value=b.dataset.url;run()}));
+})();
+
 
 /* ---------- security health check ---------- */
 (function(){const Q=[["Web & Apps","Everyone with an admin login uses two-factor authentication."],["Web & Apps","Our website, plugins and apps are updated within a month of each release."],
