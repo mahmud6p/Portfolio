@@ -44,9 +44,9 @@ canvas{display:block}
 .fc:nth-child(1):hover{background:#22222e}.fc:nth-child(2):hover{background:#1f2924}.fc:nth-child(3):hover{background:#27271f}
 .fc h3{font-weight:400;font-size:19px;margin:0}
 .fc p{color:var(--mute);font-size:13px;margin:0}
-.fc .vis{margin:auto;position:relative;width:170px;height:170px}
+.fc .vis{margin:auto;position:relative;width:min(100%,290px);height:190px}
 .fc canvas{width:100%;height:100%}
-.fc .ck{position:absolute;right:-26px;top:6px}
+.fc .ck{position:absolute;right:-6px;top:-8px}
 .fc .ck circle{transition:fill .3s}
 .fc:hover .ck circle{fill:currentColor;fill-opacity:.15}
 .more{font-size:11px;font-weight:600;border-bottom:1px solid var(--mute);align-self:flex-start;padding-bottom:2px;transition:border-color .2s,padding .2s}
@@ -389,6 +389,61 @@ footer{padding:20px 0 56px}
 .duo.solo>div{display:flex;flex-direction:column;align-items:center;text-align:center;padding:44px 28px}
 .duo.solo .cert{max-width:520px;margin:6px 0 22px}
 .duo.solo .cm{text-align:center}
+
+/* ---------- technical skills ---------- */
+.sk-intro{color:var(--mute);font-size:14px;max-width:520px;margin:14px 0 0}
+.sk-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+.sk{grid-column:span 2;position:relative;background:var(--panel);padding:26px 24px 24px;display:flex;flex-direction:column;gap:12px;min-height:290px;overflow:hidden;transition:background .3s,opacity .6s,transform .6s}
+.sk:nth-child(n+4){grid-column:span 3}
+.sk::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.6,.05,.2,1)}
+.sk:hover{background:#262830}.sk:hover::before{transform:scaleX(1)}
+.sk.pre{opacity:0;transform:translateY(16px)}
+.sk-top{display:flex;align-items:center;gap:10px;font-size:12px;margin-bottom:14px}
+.sk-n{font-weight:600;color:var(--accent);letter-spacing:.06em}
+.sk-k{color:var(--mute);letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+.sk-i{margin-left:auto;color:var(--accent);opacity:.85;transition:transform .5s cubic-bezier(.6,.05,.2,1),opacity .3s}
+.sk:hover .sk-i{transform:translateY(-3px) scale(1.08);opacity:1}
+.sk h3{font-weight:400;font-size:20px;line-height:1.3;margin:0}
+.sk p{color:var(--mute);font-size:13.5px;margin:0;max-width:440px}
+.sk .ch{list-style:none;margin:auto 0 0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.sk .ch li{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--mute);border:1px solid var(--line);padding:3px 10px;transition:color .3s,border-color .3s}
+.sk:hover .ch li{color:var(--text);border-color:#46505a}
+@media(max-width:860px){.sk-grid{grid-template-columns:1fr}.sk,.sk:nth-child(n+4){grid-column:auto}.sk{min-height:auto}}
+@media(prefers-reduced-motion:reduce){.sk,.sk::before,.sk-i,.sk .ch li{transition:none}.sk.pre{opacity:1;transform:none}}
+
+
+/* ---------- role scanner showcase ---------- */
+.spot{padding:10px 0 30px}
+.spot-meta{display:flex;justify-content:space-between;gap:16px;font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.spot-hint{color:var(--accent)}
+.spot-stage{--x:50%;--y:50%;--r:140px;position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);touch-action:pan-y;cursor:crosshair;user-select:none}
+.spot-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.spot-t{font-weight:600;font-size:clamp(28px,8.6vw,122px);line-height:.98;letter-spacing:-.035em;padding:.2em 0;white-space:nowrap}
+.spot-base{color:transparent;-webkit-text-stroke:1px #5a5c65}
+.spot-lit{position:absolute;left:0;top:0;right:0;background:linear-gradient(100deg,#3cc8ff 10%,#b7f0ff 50%,#3ddc6b 90%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px #3cc8ff55);
+ -webkit-mask-image:radial-gradient(circle var(--r) at var(--x) var(--y),#000 60%,transparent 100%);mask-image:radial-gradient(circle var(--r) at var(--x) var(--y),#000 60%,transparent 100%);pointer-events:none}
+.spot-hex{position:absolute;inset:0;white-space:pre;overflow:hidden;font:12px/14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--accent);opacity:.32;pointer-events:none;
+ -webkit-mask-image:radial-gradient(circle var(--r) at var(--x) var(--y),#000 40%,transparent 100%);mask-image:radial-gradient(circle var(--r) at var(--x) var(--y),#000 40%,transparent 100%)}
+.spot-lens{position:absolute;left:0;top:0;width:calc(var(--r)*2);height:calc(var(--r)*2);transform:translate(calc(var(--x) - var(--r)),calc(var(--y) - var(--r)));border:1px solid #3cc8ff66;border-radius:50%;pointer-events:none}
+.spot-lens::before,.spot-lens::after{content:"";position:absolute;background:#3cc8ff55}
+.spot-lens::before{left:0;right:0;top:50%;height:1px}.spot-lens::after{top:0;bottom:0;left:50%;width:1px}
+.spot-ro{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font:600 10px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.1em;color:var(--accent);background:var(--bg);padding:1px 6px;white-space:nowrap}
+.spot-stage.static .spot-lit{-webkit-mask-image:none;mask-image:none;filter:none}.spot-stage.static .spot-hex,.spot-stage.static .spot-lens{display:none}
+
+/* ---------- hero upgrade: live grid, tilt panel, magnetic buttons ---------- */
+#heroGrid{position:absolute;left:0;top:0;width:100%;height:640px;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent)}
+#top.grid-on::before{display:none}
+.hero{position:relative;z-index:1}
+.hero h1{will-change:transform}
+.rec{position:relative;overflow:hidden;will-change:transform;transform-style:preserve-3d;
+ background-image:linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff),linear-gradient(#3cc8ff,#3cc8ff);
+ background-repeat:no-repeat;
+ background-position:0 0,0 0,100% 0,100% 0,0 100%,0 100%,100% 100%,100% 100%;
+ background-size:16px 2px,2px 16px,16px 2px,2px 16px,16px 2px,2px 16px,16px 2px,2px 16px}
+.rec::before{content:"";position:absolute;left:0;right:0;top:-70px;height:70px;background:linear-gradient(transparent,rgba(60,200,255,.10));border-bottom:1px solid rgba(60,200,255,.35);pointer-events:none;animation:recscan 6s linear infinite}
+.rec::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 240px at var(--gx,50%) var(--gy,0%),rgba(60,200,255,.12),transparent 70%);opacity:var(--go,0);transition:opacity .3s}
+@keyframes recscan{from{top:-70px}to{top:100%}}
+@media(prefers-reduced-motion:reduce){.rec::before{animation:none;display:none}}
 </style>
 </head>
 <body>
@@ -398,16 +453,27 @@ footer{padding:20px 0 56px}
 </div></nav>
 
 <main id="top">
+<canvas id="heroGrid" aria-hidden="true"></canvas>
 <section class="wrap hero">
  <div>
-  <small>Cyber Security Specialist</small>
   <h1 class="rv" style="margin-top:14px">Beyond the Threat.<br>Beneath the Surface.<br>Ahead of the Risk.</h1>
   <p>I’m Md. Prince Mahmud. I find security weaknesses in websites, applications and networks before attackers do.</p>
-  <div class="btns"><a class="btn y" href="#platform">Explore My Services</a><a class="btn" href="#contact">Contact Me</a></div>
  </div>
  <div class="rec" role="region" aria-label="What this page can read about you"><div class="rh"><b>What this page can read about you</b><span id="st">reading…</span></div>
   <dl id="rec"></dl>
   <div class="rf"><span>Every site can read this before you click anything. Nothing here leaves your browser.</span><button class="btn" id="again">Run again</button></div></div>
+</section>
+
+<section class="spot" id="role" aria-label="Role">
+ <div class="wrap">
+  <div class="spot-stage" id="stage">
+   <h2 class="spot-vh">Cyber Security Specialist</h2>
+   <div class="spot-t spot-base" aria-hidden="true">CYBER SECURITY<br>SPECIALIST</div>
+   <div class="spot-hex" id="spotHex" aria-hidden="true"></div>
+   <div class="spot-t spot-lit" aria-hidden="true">CYBER SECURITY<br>SPECIALIST</div>
+   <div class="spot-lens" aria-hidden="true"><span class="spot-ro" id="spotRo">PROBE 000:000</span></div>
+  </div>
+ </div>
 </section>
 
 <section class="wrap sec" id="platform" style="padding-top:20px">
@@ -417,7 +483,7 @@ footer{padding:20px 0 56px}
 
 <section class="video" id="about" style="background:var(--bg)">
  <div class="wrap">
-  <div class="top"><h2 class="rv">About Me</h2><p>I’m a cyber security enthusiast from Rajshahi, Bangladesh, with a strong interest in penetration testing. My work covers vulnerability assessment, OSINT and malware analysis, and I hold a Cyber Security certificate from Arena Web Security (May 2025). My goal is to help individuals and organizations strengthen their digital security.</p></div>
+  <div class="top"><h2 class="rv">About Me</h2><p>I am Md. Prince Mahmud, a cyber security specialist based in Rajshahi, Bangladesh, with a particular focus on penetration testing. My work spans vulnerability assessment, open source intelligence (OSINT) and malware analysis. I hold a Cyber Security certificate from Arena Web Security, issued in May 2025. My objective is to assist individuals and organizations in strengthening their digital security.</p></div>
   <div class="player"><canvas id="field" aria-hidden="true"></canvas><div class="hud"><span>Threats neutralised <b id="tc">0</b></span><span>Tap a red dot to stop it</span></div>
    <div class="tag"><small>MPM</small><span id="tq">“Securing the Digital World, One Step at a Time.”</span></div></div>
  </div>
@@ -574,9 +640,13 @@ footer{padding:20px 0 56px}
 
 <section class="wrap sec" id="skills">
  <h2 class="rv">Technical Skills</h2>
- <div class="logos">
-  <div>Penetration Testing</div><div>Vulnerability Assessment &amp; Penetration Testing (VAPT)</div><div>Security Operations Center (SOC) Analysis</div>
-  <div>Malware Removal &amp; Analysis</div><div>Open Source Intelligence (OSINT)</div>
+ <p class="sk-intro">Five areas I work in, from finding weaknesses to cleaning up after an attack.</p>
+ <div class="sk-grid">
+  <article class="sk"><div class="sk-top"><span class="sk-n">01</span><span class="sk-k">Offensive</span><svg class="sk-i" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div><h3>Penetration Testing</h3><p>Hands-on testing of websites and networks, finding the weak spots before an attacker does.</p><ul class="ch"><li>Web apps</li><li>Networks</li><li>Exploitation</li><li>Reporting</li></ul></article>
+  <article class="sk"><div class="sk-top"><span class="sk-n">02</span><span class="sk-k">Assessment</span><svg class="sk-i" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><h3>Vulnerability Assessment &amp; Penetration Testing (VAPT)</h3><p>A structured sweep with manual verification, ranked by real risk and paired with clear fixes.</p><ul class="ch"><li>Scanning</li><li>Risk rating</li><li>Remediation</li></ul></article>
+  <article class="sk"><div class="sk-top"><span class="sk-n">03</span><span class="sk-k">Defensive</span><svg class="sk-i" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M7 21h10M12 17v4"/><path d="M6 11h3l2-3 2.5 6 2-3H18"/></svg></div><h3>Security Operations Center (SOC) Analysis</h3><p>Watching logs and alerts, triaging what matters and responding when something looks wrong.</p><ul class="ch"><li>Log analysis</li><li>Alert triage</li><li>Incident response</li></ul></article>
+  <article class="sk"><div class="sk-top"><span class="sk-n">04</span><span class="sk-k">Response</span><svg class="sk-i" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7a3 3 0 0 1 6 0"/><rect x="7" y="7" width="10" height="12" rx="5"/><path d="M12 11v8M3 12h4M17 12h4M4 7l3 2M20 7l-3 2M4 19l3-2M20 19l-3-2"/></svg></div><h3>Malware Removal &amp; Analysis</h3><p>Cleaning up infected sites and systems, then studying how the malware got in and what it did.</p><ul class="ch"><li>Cleanup</li><li>Analysis</li><li>Hardening</li></ul></article>
+  <article class="sk"><div class="sk-top"><span class="sk-n">05</span><span class="sk-k">Intelligence</span><svg class="sk-i" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/><path d="M7.5 10.5a3 3 0 0 1 3-3"/></svg></div><h3>Open Source Intelligence (OSINT)</h3><p>Collecting and verifying public information for investigations, exposure checks and background research.</p><ul class="ch"><li>Recon</li><li>Breach checks</li><li>Verification</li></ul></article>
  </div>
  <div class="duo solo">
   <div><h3>Certifications</h3>
@@ -646,9 +716,83 @@ const F=[["Penetration Testing & VAPT","Identify security vulnerabilities in web
 $("three").innerHTML=F.map(f=>`<article class="fc" style="color:${f[3]}"><h3 style="color:var(--text)">${f[0]}</h3><p>${f[1]}</p>
  <div class="vis"><canvas></canvas><svg class="ck" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="10"/><path d="M6.5 11.5l3 3 6-6.5"/></svg></div>
  </article>`).join("");
+/* ---------- feature card visuals ---------- */
+const MONO="600 9px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace",RED="#e5484d",MUTE="rgba(154,156,164,.95)";
+function rr(x,a,b,w,h,r){x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()}
+const hs=i=>{const q=Math.sin(i*127.1+311.7)*43758.5453;return q-Math.floor(q)};
+function viz(c,fn,col){const x=c.getContext("2d");let W=1,H=1,on=false,t=0,b=1,last=0,raf=0;
+ const u={clamp:(v,a=0,z=1)=>Math.min(z,Math.max(a,v)),ease:v=>v<.5?2*v*v:1-Math.pow(-2*v+2,2)/2};
+ function fit(){const r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=c.width=Math.max(1,Math.round(r.width*d));H=c.height=Math.max(1,Math.round(r.height*d))}
+ function paint(){const s=Math.min(W/290,H/190);x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,W,H);x.translate((W-290*s)/2,(H-190*s)/2);x.scale(s,s);x.globalAlpha=1;fn(x,t,col,u);x.globalAlpha=1}
+ function frame(now){if(!on)return;const dt=Math.min(50,now-(last||now));last=now;t+=dt*b;paint();raf=requestAnimationFrame(frame)}
+ fit();if(reduce){t=fn.end||5000;paint()}
+ new IntersectionObserver(e=>{if(e[0].isIntersecting){if(!on){on=true;last=0;if(!reduce)raf=requestAnimationFrame(frame)}}else{on=false;cancelAnimationFrame(raf)}}).observe(c);
+ addEventListener("resize",()=>{fit();if(reduce||!on)paint()});
+ return{boost:v=>b=v}}
+
+/* 1. lock being picked: pins set one by one, shackle swings open */
+function lockPick(x,t,col,u){
+ const tt=t%7000,px=[105,125,145,165,185],rest=[22,12,28,16,24],SH=112,BOT=150,rl=tt>6200?1-u.clamp((tt-6200)/500):1;
+ let n=0;const ps=px.map((_,i)=>{const p=u.ease(u.clamp((tt-(600+i*750))/450))*rl;if(p>.98)n++;return p});
+ const open=u.ease(u.clamp((tt-4600)/420))*rl;
+ x.save();x.translate(118,96);x.rotate(-open*.55);x.translate(-118,-96-open*10);
+ x.lineWidth=4;x.lineCap="round";x.strokeStyle=open>.3?RED:"#cfd0d6";
+ x.beginPath();x.moveTo(118,96);x.lineTo(118,74);x.arc(145,74,27,Math.PI,0);x.lineTo(172,96);x.stroke();x.restore();
+ x.lineCap="butt";x.lineWidth=1.5;x.strokeStyle="rgba(236,235,230,.5)";x.fillStyle="#26272d";rr(x,88,96,114,66,8);x.fill();x.stroke();
+ x.setLineDash([3,3]);x.lineWidth=1;x.strokeStyle=open>0?RED:"rgba(154,156,164,.7)";x.beginPath();x.moveTo(94,SH);x.lineTo(196,SH);x.stroke();x.setLineDash([]);
+ ps.forEach((p,i)=>{const top=SH+rest[i]*(1-p);x.fillStyle=p>.98?col:"rgba(236,235,230,.4)";x.fillRect(px[i]-6,top,12,BOT-top)});
+ if(tt>500&&tt<4700&&rl==1){const a=Math.min(4,Math.max(0,(tt-600)/750)),tx=105+a*20,ty=BOT+7+Math.sin(tt*.02)*1.5;
+  x.strokeStyle="#cfd0d6";x.lineWidth=2.2;x.lineCap="round";x.beginPath();x.moveTo(26,180);x.lineTo(tx,ty);x.stroke();x.lineCap="butt"}
+ x.font=MONO;x.textAlign="center";
+ if(open>.5){x.fillStyle=RED;x.fillText("VULNERABILITY FOUND",145,184)}else{x.fillStyle=MUTE;x.fillText("TESTING "+n+"/5 PINS",145,184)}}
+lockPick.end=5600;
+
+/* 2. live traffic with a normal-range band; spikes break out and get flagged */
+function anomaly(x,t,col,u){
+ const MID=104,HALF=20,SPD=.05,SPAN=190,L=14,WD=262,amp=k=>(hs(k+9)>.5?-1:1)*(34+hs(k+3)*30),has=k=>hs(k)>.4;
+ x.lineWidth=1;x.strokeStyle="rgba(236,235,230,.06)";const off=(t*SPD)%29;
+ for(let k=0;k<=9;k++){const gx=L+k*29-off;if(gx<L)continue;x.beginPath();x.moveTo(gx,30);x.lineTo(gx,172);x.stroke()}
+ x.globalAlpha=.1;x.fillStyle=col;x.fillRect(L,MID-HALF,WD,HALF*2);x.globalAlpha=.4;x.strokeStyle=col;x.setLineDash([3,4]);
+ x.beginPath();x.moveTo(L,MID-HALF);x.lineTo(L+WD,MID-HALF);x.moveTo(L,MID+HALF);x.lineTo(L+WD,MID+HALF);x.stroke();x.setLineDash([]);x.globalAlpha=1;
+ let px=null,py=0;x.lineWidth=1.8;x.lineCap="round";
+ for(let xx=L;xx<=L+WD;xx+=2){const wx=xx+t*SPD;let v=5*Math.sin(wx*.15)+3*Math.sin(wx*.37+1)+2*Math.sin(wx*.9);
+  const k0=Math.round((wx-90)/SPAN);if(k0>=0&&has(k0))v+=amp(k0)*Math.exp(-Math.pow((wx-(90+k0*SPAN))/7,2));
+  const y=MID-v;if(px!==null){x.strokeStyle=(Math.abs(y-MID)>HALF||Math.abs(py-MID)>HALF)?RED:col;x.beginPath();x.moveTo(px,py);x.lineTo(xx,y);x.stroke()}px=xx;py=y}
+ x.lineCap="butt";x.fillStyle=col;x.shadowColor=col;x.shadowBlur=8;x.beginPath();x.arc(px,py,3,0,6.2832);x.fill();x.shadowBlur=0;
+ const k1=Math.floor(t*SPD/SPAN)-1;x.font=MONO;x.textAlign="center";
+ for(let k=Math.max(0,k1);k<=k1+3;k++){if(!has(k))continue;const xc=90+k*SPAN-t*SPD;if(xc<40||xc>L+WD-16)continue;const a=amp(k),yc=MID-a,pr=6+2.5*Math.sin(t*.008);
+  x.strokeStyle=RED;x.lineWidth=1.2;x.beginPath();x.arc(xc,yc,pr,0,6.2832);x.stroke();x.fillStyle=RED;x.fillText("ANOMALY",xc,yc+(a>0?-13:19))}
+ let cnt=0;const K=Math.floor((t*SPD+L+WD-90)/SPAN);for(let k=0;k<=K;k++)if(has(k))cnt++;
+ x.globalAlpha=.55+.45*Math.sin(t*.006);x.fillStyle=col;x.beginPath();x.arc(22,16,2.5,0,6.2832);x.fill();x.globalAlpha=1;
+ x.fillStyle=MUTE;x.textAlign="left";x.fillText("TRAFFIC · LIVE",32,19);x.textAlign="right";x.fillText("FLAGGED "+cnt,250,19)}
+(function(){let k=1;while(!(hs(k)>.4))k++;anomaly.end=(90+k*190-150)/.05})();
+
+/* 3. investigation map: entities link up, a tracer follows the trail to a malicious hash */
+function graph(x,t,col,u){
+ const tt=t%9500,fade=tt>8700?1-u.clamp((tt-8700)/700):1,bad=u.ease(u.clamp((tt-5700)/500)),isBad=i=>i==2||i==4||i==5;
+ const N=[[145,92,"TARGET",0],[50,52,"@handle",600],[240,50,"domain",1200],[48,138,"email",1800],[242,138,"IP addr",2400],[148,164,"hash",3400]];
+ const E=[[0,1,600,0],[0,2,1200,1],[0,3,1800,0],[0,4,2400,0],[2,4,3000,1],[4,5,3400,1]];
+ const P=N.map((n,i)=>[n[0]+2.5*Math.sin(t*.0011+i*1.7),n[1]+2.5*Math.cos(t*.0009+i*2.3)]);
+ x.globalAlpha=fade;
+ E.forEach(e=>{const p=u.ease(u.clamp((tt-e[2])/550));if(p<=0)return;const A=P[e[0]],B=P[e[1]],ex=A[0]+(B[0]-A[0])*p,ey=A[1]+(B[1]-A[1])*p;
+  x.lineWidth=1.2;x.strokeStyle="rgba(154,156,164,.45)";x.beginPath();x.moveTo(A[0],A[1]);x.lineTo(ex,ey);x.stroke();
+  if(e[3]&&bad>0){x.globalAlpha=fade*bad;x.strokeStyle=RED;x.lineWidth=1.8;x.beginPath();x.moveTo(A[0],A[1]);x.lineTo(ex,ey);x.stroke();x.globalAlpha=fade}});
+ N.forEach((n,i)=>{const a=u.ease(u.clamp((tt-n[3])/350));if(a<=0)return;const p=P[i],r=i?4:6.5;
+  x.globalAlpha=fade*a;
+  if(!i){x.strokeStyle=col;x.globalAlpha=fade*a*.4;x.lineWidth=1;x.beginPath();x.arc(p[0],p[1],r+5,0,6.2832);x.stroke();x.globalAlpha=fade*a}
+  x.fillStyle=col;x.beginPath();x.arc(p[0],p[1],r,0,6.2832);x.fill();
+  if(isBad(i)&&bad>0){x.globalAlpha=fade*a*bad;x.fillStyle=RED;x.beginPath();x.arc(p[0],p[1],r,0,6.2832);x.fill();
+   const q=(t*.0035+i*.3)%1;x.globalAlpha=fade*a*bad*(1-q);x.strokeStyle=RED;x.lineWidth=1.2;x.beginPath();x.arc(p[0],p[1],r+2+q*11,0,6.2832);x.stroke()}
+  x.globalAlpha=fade*a;x.font=MONO;x.textAlign="center";x.fillStyle=MUTE;x.fillText(n[2],p[0],p[1]+(i==1||i==2?-11:i==0?19:16))});
+ x.globalAlpha=fade;
+ if(tt>3800&&tt<5700){const path=[P[0],P[2],P[4],P[5]],sg=Math.min(2,Math.floor((tt-3800)/600)),f=u.ease(u.clamp(((tt-3800)-sg*600)/600)),A=path[sg],B=path[sg+1];
+  x.fillStyle="#fff";x.shadowColor=col;x.shadowBlur=10;x.beginPath();x.arc(A[0]+(B[0]-A[0])*f,A[1]+(B[1]-A[1])*f,3,0,6.2832);x.fill();x.shadowBlur=0}
+ if(bad>.5){x.globalAlpha=fade*bad;x.font=MONO;x.textAlign="center";x.fillStyle=RED;x.fillText("THREAT TRAIL LINKED",145,16)}}
+graph.end=7000;
+
 document.querySelectorAll(".fc").forEach((el,i)=>{
- const d=Dots(el.querySelector("canvas"),[F[i][2]],{n:800,sz:1.5,sp:.006,col:"#cfd0d6"});
- el.onmouseenter=()=>d.boost(5);el.onmouseleave=()=>d.boost(1)});
+ const v=viz(el.querySelector("canvas"),[lockPick,anomaly,graph][i],getComputedStyle(el).color);
+ el.onmouseenter=()=>v.boost(2.6);el.onmouseleave=()=>v.boost(1)});
 
 /* ---------- threat radar in video block ---------- */
 (function(){const c=$("field"),x=c.getContext("2d"),pl=c.parentElement,tc=$("tc");
@@ -1341,6 +1485,77 @@ addEventListener("scroll",sc,{passive:true});addEventListener("resize",sc);sc();
  function show(){tt.textContent=T[i];tn.textContent=(i+1)+" / "+T.length}
  $("tx").onclick=()=>{i=(i+1)%T.length;show()};$("tp").onclick=()=>{i=(i-1+T.length)%T.length;show()};show()})();
 
+
+/* ---------- technical skills reveal ---------- */
+(function(){const c=[...document.querySelectorAll(".sk")];
+ if(!c.length||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+ c.forEach((e,i)=>{e.classList.add("pre");e.style.transitionDelay=(i%3)*90+"ms"});
+ const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.remove("pre");io.unobserve(x.target)}}),{threshold:.15});
+ c.forEach(e=>io.observe(e));
+ setTimeout(()=>c.forEach(e=>e.classList.remove("pre")),4000)})();
+
+
+/* ---------- role scanner ---------- */
+(function(){const st=document.getElementById("stage");if(!st)return;
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches){st.classList.add("static");return}
+ const hex=document.getElementById("spotHex"),ro=document.getElementById("spotRo"),H="0123456789ABCDEF";
+ let w=1,h=1,x=0,y=0,tx=0,ty=0,manual=false,idle=0,raf=0,lastN=0,cols=0,rows=0;
+ const pad=n=>String(n).padStart(3,"0");
+ function noise(){let o="";for(let r=0;r<rows;r++){for(let c=0;c<cols;c++)o+=H[(Math.random()*16)|0];o+="\n"}hex.textContent=o}
+ function size(){const b=st.getBoundingClientRect();w=b.width;h=b.height;const r=Math.max(90,Math.min(170,w*.16));st.style.setProperty("--r",r+"px");cols=Math.ceil(w/7.2);rows=Math.ceil(h/14);noise()}
+ function frame(now){
+  if(!manual){tx=w*(.5+.4*Math.sin(now*.0006));ty=h*(.5+.34*Math.sin(now*.00093+1.3))}
+  x+=(tx-x)*.12;y+=(ty-y)*.12;
+  st.style.setProperty("--x",x.toFixed(1)+"px");st.style.setProperty("--y",y.toFixed(1)+"px");
+  ro.textContent="PROBE "+pad(Math.round(x))+":"+pad(Math.round(y));
+  if(now-lastN>130){noise();lastN=now}
+  raf=requestAnimationFrame(frame)}
+ function hold(ms){manual=true;clearTimeout(idle);idle=setTimeout(()=>{manual=false},ms)}
+ st.addEventListener("pointermove",e=>{const b=st.getBoundingClientRect();tx=e.clientX-b.left;ty=e.clientY-b.top;hold(2200)});
+ st.addEventListener("pointerleave",()=>hold(500));
+ size();x=tx=w/2;y=ty=h/2;addEventListener("resize",size);
+ new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){if(!raf)raf=requestAnimationFrame(frame)}else{cancelAnimationFrame(raf);raf=0}}),{threshold:.05}).observe(st);
+})();
+
+/* ---------- hero upgrade ---------- */
+(function(){const top=document.getElementById("top"),cv=document.getElementById("heroGrid"),hero=document.querySelector(".hero");
+ if(!top||!cv||!hero||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+ const g=cv.getContext("2d"),panel=hero.querySelector(".rec"),h1=hero.querySelector("h1"),SP=28,HT=640;
+ let w=0,dpr=1,lx=0,ly=0,tx=0,ty=0,manual=false,idle=0,raf=0,rip=null,nextPing=0,px=0,py=0,tpx=0,tpy=0;
+ const fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
+ function size(){const b=top.getBoundingClientRect();w=b.width;dpr=Math.min(2,devicePixelRatio||1);cv.width=Math.round(w*dpr);cv.height=Math.round(HT*dpr);g.setTransform(dpr,0,0,dpr,0,0)}
+ function panelCenter(){const a=top.getBoundingClientRect(),b=panel.getBoundingClientRect();return[b.left-a.left+b.width/2,b.top-a.top+b.height/2]}
+ function ping(x,y){rip={x,y,t:performance.now()}}
+ function frame(now){
+  if(!manual){tx=w*(.5+.38*Math.sin(now*.00042));ty=HT*(.4+.22*Math.sin(now*.00071+1))}
+  lx+=(tx-lx)*.1;ly+=(ty-ly)*.1;
+  if(now>nextPing){const c=panelCenter();ping(c[0],c[1]);nextPing=now+7000}
+  g.clearRect(0,0,w,HT);
+  const R=170,cols=Math.ceil(w/SP)+1,rows=Math.ceil(HT/SP)+1;
+  let rr=-1,rp=0;if(rip){const p=(now-rip.t)/2600;if(p>=1)rip=null;else{rp=p;rr=p*Math.max(w,HT)*.9}}
+  for(let r=0;r<rows;r++){for(let c=0;c<cols;c++){
+   let x=c*SP+SP/2,y=r*SP+SP/2;
+   const dx=x-lx,dy=y-ly,d=Math.hypot(dx,dy);let k=d<R?1-d/R:0;k*=k;
+   let wv=0;if(rr>=0){const e=Math.hypot(x-rip.x,y-rip.y)-rr;wv=Math.exp(-(e*e)/1400)*(1-rp)}
+   if(k>0.001&&d>0){x+=dx/d*k*7;y+=dy/d*k*7}
+   const t=Math.min(1,k*1.1+wv),rad=1+k*1.8+wv*1.6;
+   const rC=236+(60-236)*t|0,gC=235+(200-235)*t|0,bC=230+(255-230)*t|0,a=.09+t*.85;
+   g.fillStyle="rgba("+rC+","+gC+","+bC+","+a.toFixed(3)+")";g.beginPath();g.arc(x,y,rad,0,6.2832);g.fill()}}
+  if(fine&&panel){px+=(tpx-px)*.1;py+=(tpy-py)*.1;
+   panel.style.transform="perspective(1000px) rotateY("+(px*5).toFixed(2)+"deg) rotateX("+(-py*4).toFixed(2)+"deg)";
+   if(h1)h1.style.transform="translate3d("+(-px*7).toFixed(1)+"px,"+(-py*5).toFixed(1)+"px,0)"}
+  raf=requestAnimationFrame(frame)}
+ function hold(ms){manual=true;clearTimeout(idle);idle=setTimeout(()=>{manual=false;tpx=tpy=0},ms)}
+ top.addEventListener("pointermove",e=>{const b=top.getBoundingClientRect();tx=e.clientX-b.left;ty=e.clientY-b.top;hold(2400);
+  if(fine&&panel){const p=panel.getBoundingClientRect();tpx=Math.max(-1,Math.min(1,(e.clientX-(p.left+p.width/2))/(innerWidth/2)));tpy=Math.max(-1,Math.min(1,(e.clientY-(p.top+p.height/2))/(innerHeight/2)));
+   panel.style.setProperty("--gx",(e.clientX-p.left)+"px");panel.style.setProperty("--gy",(e.clientY-p.top)+"px");
+   panel.style.setProperty("--go",e.clientX>=p.left&&e.clientX<=p.right&&e.clientY>=p.top&&e.clientY<=p.bottom?1:0)}});
+ top.addEventListener("pointerleave",()=>{hold(500);if(panel)panel.style.setProperty("--go",0)});
+ top.addEventListener("pointerdown",e=>{const b=top.getBoundingClientRect();if(e.clientY-b.top<HT)ping(e.clientX-b.left,e.clientY-b.top)});
+ const again=document.getElementById("again");if(again)again.addEventListener("click",()=>{const c=panelCenter();ping(c[0],c[1])});
+ size();lx=tx=w/2;ly=ty=HT*.4;addEventListener("resize",size);top.classList.add("grid-on");
+ new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){if(!raf)raf=requestAnimationFrame(frame)}else{cancelAnimationFrame(raf);raf=0}}),{threshold:0}).observe(hero);
+})();
 </script>
 </body>
 </html>
